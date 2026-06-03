@@ -17,9 +17,9 @@ namespace ValidadorDuplicidade
     {
 
 
-     
+
         Filtros f = new Filtros();
-        
+
         List<string> r = new List<string>();
         public Form1()
         {
@@ -32,23 +32,21 @@ namespace ValidadorDuplicidade
             Planilha3.BorderStyle = BorderStyle.None;
 
 
-           
+
 
             ExcelPackage.License.SetNonCommercialPersonal("Matheus");
 
-         
-            
+
+
             ZoomP1.Minimum = 9;
             ZoomP2.Minimum = 9;
             ZoomP3.Minimum = 9;
-            ZoomD.Minimum = 9;
 
-            Ordem.Checked = true;
 
             Planilha1.Sorted = true;
             Planilha2.Sorted = true;
             Planilha3.Sorted = true;
-            Duplicados.Sorted = true;
+
 
             preencherListas();
 
@@ -74,8 +72,7 @@ namespace ValidadorDuplicidade
             Planilha3.BackColor = panel3.BackColor;
             Planilha3.ForeColor = Color.White;
 
-            Duplicados.BackColor = panel1.BackColor;
-            Duplicados.ForeColor = Color.White;
+
         }
 
 
@@ -88,17 +85,15 @@ namespace ValidadorDuplicidade
             {
                 case 0:
                     MessageBox.Show("Nenhum registro duplicado encontrado.");
-                    FotoErro.BackgroundImage = Properties.Resources.Sucesso;
+                    //FotoErro.BackgroundImage = Properties.Resources.Sucesso;
                     break;
                 case < 5:
                     Piscar("amarelo");
-                    FotoErro.BackgroundImage = Properties.Resources.alerta;
+                    //FotoErro.BackgroundImage = Properties.Resources.alerta;
                     break;
                 default:
-                    Duplicados.ForeColor = Color.White;
                     Piscar("vermelho");
-                    Duplicados.Font = new Font(Duplicados.Font, FontStyle.Bold);
-                    FotoErro.BackgroundImage = Properties.Resources.critico;
+                    //FotoErro.BackgroundImage = Properties.Resources.critico;
                     break;
             }
 
@@ -111,35 +106,29 @@ namespace ValidadorDuplicidade
                 case "vermelho":
                     for (int i = 0; i < 5; i++)
                     {
-                        FotoErro.BackgroundImage = Properties.Resources.critico;
-                        FotoErro2.BackgroundImage = Properties.Resources.critico;
+                        //FotoErro.BackgroundImage = Properties.Resources.critico;
                         await Task.Delay(150);
-                        FotoErro.BackgroundImage = null;
-                        FotoErro2.BackgroundImage = null;
+                        //FotoErro.BackgroundImage = null;
                         await Task.Delay(150);
-                        FotoErro.BackgroundImage = Properties.Resources.critico;
-                        FotoErro2.BackgroundImage = Properties.Resources.critico;
+                        //FotoErro.BackgroundImage = Properties.Resources.critico;
 
                     }
                     break;
                 case "amarelo":
                     for (int i = 0; i < 3; i++)
                     {
-                        FotoErro2.BackgroundImage = Properties.Resources.alerta;
-                        FotoErro.BackgroundImage = Properties.Resources.alerta;
+                        //FotoErro.BackgroundImage = Properties.Resources.alerta;
                         await Task.Delay(150);
-                        FotoErro.BackgroundImage = null;
-                        FotoErro2.BackgroundImage = null;
+                        //FotoErro.BackgroundImage = null;
                         await Task.Delay(150);
-                        FotoErro.BackgroundImage = Properties.Resources.alerta;
-                        FotoErro2.BackgroundImage = Properties.Resources.alerta;
+                        //FotoErro.BackgroundImage = Properties.Resources.alerta;
                     }
                     break;
 
             }
 
         }
-       
+
 
         private void LoadTela(int tereceiraPlanilha = 0)
         {
@@ -159,19 +148,11 @@ namespace ValidadorDuplicidade
                 Planilha1.Sorted = true;
                 Planilha2.Sorted = true;
                 Planilha3.Sorted = true;
-                Duplicados.Sorted = true;
+
 
                 Excel excel = new Excel();
 
 
-
-                if (!Ordem.Checked)
-                {
-                    Planilha1.Sorted = false;
-                    Planilha2.Sorted = false;
-                    Planilha3.Sorted = false;
-
-                }
 
 
                 var retorno = excel.abrirDocumento(Properties.Settings.Default.Caminho_arq, f);
@@ -180,20 +161,19 @@ namespace ValidadorDuplicidade
                 Planilha1.Items.Clear();
                 Planilha2.Items.Clear();
                 Planilha3.Items.Clear();
-                Duplicados.Items.Clear();
 
                 var contador1 = 0;
                 var contador2 = 0;
                 var contador3 = 0;
                 var numeroDuplicados = 0;
-      
+
 
                 foreach (var dado in retorno.Lista1)
                 {
                     contador1++;
 
-                    
-                    Planilha1.Items.Add(dado); 
+
+                    Planilha1.Items.Add(dado);
 
 
                 }
@@ -212,16 +192,15 @@ namespace ValidadorDuplicidade
 
                 foreach (var dado in retorno.Duplicados["DuplicadosTodos"])
                 {
-                  
+
                     numeroDuplicados++;
-                    Duplicados.Items.Add(dado);
 
                 }
 
                 if (numeroDuplicados >= 0)
                 {
                     alertar(numeroDuplicados);
-                    QtdDuplicidade.Text = numeroDuplicados.ToString() + "  Registros Duplicados";
+                    //QtdDuplicidade.Text = numeroDuplicados.ToString() + "  Registros Duplicados";
                 }
 
 
@@ -275,27 +254,7 @@ namespace ValidadorDuplicidade
 
         private void Duplicados_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Planilha1.SelectedItem = null;
-            Planilha2.SelectedItem = null;
-            Planilha3.SelectedItem = null;
 
-            if (Duplicados.SelectedItem is not Registro selecionado) return;
-
-
-
-            string Nome = selecionado.NomeRegistro; 
-            string valor = selecionado.ValorRegistro;
-
-            Planilha1.SelectedItem = Planilha1.Items.Cast<Registro>()
-                .FirstOrDefault(x => x.NomeRegistro == Nome && x .ValorRegistro == valor) ?? Planilha1.Items.Cast<Registro>() .FirstOrDefault(x => x.NomeRegistro == Nome);
-
-            Planilha2.SelectedItem = Planilha2.Items.Cast<Registro>()
-                .FirstOrDefault(x => x.NomeRegistro == Nome && x.ValorRegistro == valor) ?? Planilha2.Items.Cast<Registro>().FirstOrDefault(x => x.NomeRegistro == Nome);
-
-            Planilha3.SelectedItem = Planilha3.Items.Cast<Registro>()
-                .FirstOrDefault(x => x.NomeRegistro == Nome && x.ValorRegistro == valor) ?? Planilha3.Items.Cast<Registro>().FirstOrDefault(x => x.NomeRegistro == Nome);
-
-         
 
         }
 
@@ -329,7 +288,6 @@ namespace ValidadorDuplicidade
 
                 Planilha1.Items.Clear();
                 Planilha2.Items.Clear();
-                Duplicados.Items.Clear();
 
                 LoadTela();
                 preencherListas();
@@ -353,7 +311,7 @@ namespace ValidadorDuplicidade
         private void materialButton1_Click(object sender, EventArgs e)
         {
             Duplicados d = new Duplicados();
-            d.ShowDialog();
+            d.Show();
 
             preencherListas();
 
@@ -368,7 +326,7 @@ namespace ValidadorDuplicidade
         private void FechaTerceira_Click(object sender, EventArgs e)
         {
 
-           
+
 
             LoadTela(0);
 
@@ -379,9 +337,9 @@ namespace ValidadorDuplicidade
 
         private void hopeComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
 
-            
+
+
         }
 
         private void panel7_Click(object sender, EventArgs e)
@@ -393,18 +351,18 @@ namespace ValidadorDuplicidade
         {
 
 
-            
+
 
             preencherListas();
 
             panel7.Visible = true;
 
-  
+
         }
 
         private void panel3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Planilha2_SelectedIndexChanged(object sender, EventArgs e)
@@ -444,10 +402,7 @@ namespace ValidadorDuplicidade
 
         private void ZoomD_Click(object sender, EventArgs e)
         {
-            Duplicados.Font = new Font(Duplicados.Font.FontFamily,
-                (float)ZoomD.Value,
-                Duplicados.Font.Style
-            );
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -456,6 +411,16 @@ namespace ValidadorDuplicidade
         }
 
         private void panel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Ordem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void foxButton1_Click(object sender, EventArgs e)
         {
 
         }

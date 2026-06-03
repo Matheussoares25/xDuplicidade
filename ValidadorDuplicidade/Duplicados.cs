@@ -31,8 +31,25 @@ namespace ValidadorDuplicidade
 
 
             init();
+            Colorir();
 
 
+
+
+        }
+
+        private void FiltroValor_CheckedChanged(object sender, EventArgs e)
+        {
+
+            //Os contadores marcam a quantidade de registro dentro das tabelas;
+            //São zerados quando o filtro é aplicado para recomeçar a contagem;
+
+           
+
+        }
+
+        private void Colorir()
+        {
             ResultadoLista2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             TabelaResultado.Sort(TabelaResultado.Columns[1], System.ComponentModel.ListSortDirection.Ascending);
             ResultadoLista1.Sort(ResultadoLista1.Columns[1], System.ComponentModel.ListSortDirection.Ascending);
@@ -51,6 +68,7 @@ namespace ValidadorDuplicidade
                     if (nomeIgual && valorIgual)
                     {
                         row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.ForeColor = Color.White;
                     }
 
 
@@ -67,74 +85,52 @@ namespace ValidadorDuplicidade
                     bool valorIgual = row.Cells[3].Value?.ToString() == Valor;
                     if (nomeIgual && valorIgual)
                     {
-                        row.DefaultCellStyle.BackColor = Color.Orange;
+                        row.DefaultCellStyle.BackColor = Color.Yellow;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
                     }
                 }
 
-
             }
 
-        }
 
-        private void FiltroValor_CheckedChanged(object sender, EventArgs e)
-        {
-
-            //Os contadores marcam a quantidade de registro dentro das tabelas;
-            //São zerados quando o filtro é aplicado para recomeçar a contagem;
-
-            f.Valor = FiltroValor.Checked;
-            contador = 0;
-            contador1 = 0;
-            contador2 = 0;
-
-            init();
-
-
-            TabelaResultado.Sort(TabelaResultado.Columns[1], System.ComponentModel.ListSortDirection.Ascending);
-            ResultadoLista1.Sort(ResultadoLista1.Columns[1], System.ComponentModel.ListSortDirection.Ascending);
-            ResultadoLista2.Sort(ResultadoLista2.Columns[1], System.ComponentModel.ListSortDirection.Ascending);
-
-            foreach (DataGridViewRow rowL2 in ResultadoLista2.Rows)
+            foreach (DataGridViewRow rowResultado in TabelaResultado.Rows)
             {
-                string NomeA = rowL2.Cells[1].Value?.ToString();
-                string ValorA = rowL2.Cells[3].Value?.ToString();
+                string nome = rowResultado.Cells[1].Value?.ToString();
+                string valor = rowResultado.Cells[3].Value?.ToString();
 
-                foreach (DataGridViewRow row in TabelaResultado.Rows)
+                bool existeNaLista1 = false;
+                bool existeNaLista2 = false;
+
+                foreach (DataGridViewRow row in ResultadoLista1.Rows)
                 {
-                    bool nomeIgual = row.Cells[1].Value?.ToString() == NomeA;
-                    bool valorIgual = row.Cells[3].Value?.ToString() == ValorA;
-
-                    if (nomeIgual && valorIgual)
+                    if (row.Cells[1].Value?.ToString() == nome &&
+                        row.Cells[3].Value?.ToString() == valor)
                     {
-                        row.DefaultCellStyle.BackColor = Color.Red;
-                    }
-
-
-                }
-            }
-
-            foreach (DataGridViewRow rowL1 in ResultadoLista1.Rows)
-            {
-                string NomeB = rowL1.Cells[1].Value?.ToString();
-                string ValorB = rowL1.Cells[3].Value?.ToString();
-                foreach (DataGridViewRow row in TabelaResultado.Rows)
-                {
-                    bool nomeIgual = row.Cells[1].Value?.ToString() == NomeB;
-                    bool valorIgual = row.Cells[3].Value?.ToString() == ValorB;
-                    if (nomeIgual && valorIgual)
-                    {
-                        row.DefaultCellStyle.BackColor = Color.Orange;
+                        existeNaLista1 = true;
+                        break;
                     }
                 }
 
+                foreach (DataGridViewRow row in ResultadoLista2.Rows)
+                {
+                    if (row.Cells[1].Value?.ToString() == nome &&
+                        row.Cells[3].Value?.ToString() == valor)
+                    {
+                        existeNaLista2 = true;
+                        break;
+                    }
+                }
 
+                if (existeNaLista1 && existeNaLista2)
+                {
+                    rowResultado.DefaultCellStyle.BackColor = Color.MediumBlue;
+                    rowResultado.DefaultCellStyle.ForeColor = Color.White;
+                }
             }
-
 
 
 
         }
-
         public void init()
         {
             try
@@ -185,14 +181,16 @@ namespace ValidadorDuplicidade
                 QtdTabela2.Text = contador2.ToString();
 
 
-                DataUltimaSemana.Text = retorno.nomes["nome1"] + " Tabela 1";
-                DataPenultimaSemana.Text = retorno.nomes["nome2"] + " Tabela 2";
-            }catch(Exception ex)
+                DataUltimaSemana.Text = retorno.nomes["nome2"];
+                DataPenultimaSemana.Text = retorno.nomes["nome1"];
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao abrir o arquivo: " + ex.Message + "\nNão existe planilhas suficientes para serem comparadas", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
-            }
+        }
 
         private void Duplicados_Load(object? sender, EventArgs e)
         {
@@ -241,20 +239,30 @@ namespace ValidadorDuplicidade
                 if (nomeIgual && valorIgual)
                 {
 
-                    for (int i = 0; i < 3; i++)
-                    {
-                        row.DefaultCellStyle.BackColor = Color.Red;
-                        await Task.Delay(200);
-                        row.DefaultCellStyle.BackColor = Color.Orange;
-                        await Task.Delay(200);
-                        row.DefaultCellStyle.BackColor = Color.White;
+                    //for (int i = 0; i < 3; i++)
+                    //{
+                    //    row.DefaultCellStyle.BackColor = Color.Red;
+                    //    await Task.Delay(200);
+                    //    row.DefaultCellStyle.BackColor = Color.Orange;
+                    //    await Task.Delay(200);
+                    //    row.DefaultCellStyle.BackColor = Color.White;
 
-                    }
+                    //}
 
                     row.Selected = true;
-                    row.DefaultCellStyle.SelectionBackColor = Color.DimGray;
+                    row.DefaultCellStyle.BackColor = Color.Yellow;
+                    row.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
                     ResultadoLista1.CurrentCell = row.Cells[0];
                     break;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                    row.DefaultCellStyle.SelectionBackColor = Color.Yellow;
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular);
+                    row.DefaultCellStyle.ForeColor = Color.Black;
                 }
 
             }
@@ -267,20 +275,30 @@ namespace ValidadorDuplicidade
                 if (nomeIgual && valorIgual)
                 {
 
-                    for (int i = 0; i < 3; i++)
-                    {
-                        row.DefaultCellStyle.BackColor = Color.Red;
-                        await Task.Delay(200);
-                        row.DefaultCellStyle.BackColor = Color.Orange;
-                        await Task.Delay(200);
-                        row.DefaultCellStyle.BackColor = Color.White;
+                    ////for (int i = 0; i < 3; i++)
+                    ////{
+                    ////    row.DefaultCellStyle.BackColor = Color.Red;
+                    ////    await Task.Delay(200);
+                    ////    row.DefaultCellStyle.BackColor = Color.Orange;
+                    ////    await Task.Delay(200);
+                    ////    row.DefaultCellStyle.BackColor = Color.White;
 
 
-                    }
+                    ////}
                     row.Selected = true;
-                    row.DefaultCellStyle.SelectionBackColor = Color.DimGray;
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                    row.DefaultCellStyle.SelectionBackColor = Color.Red;
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                    row.DefaultCellStyle.ForeColor = Color.White;
                     ResultadoLista2.CurrentCell = row.Cells[0];
                     break;
+                }
+                else
+                {
+                    row.DefaultCellStyle.BackColor = Color.White;
+                    row.DefaultCellStyle.SelectionBackColor = Color.Red;
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular);
+                    row.DefaultCellStyle.ForeColor = Color.Black;
                 }
             }
 
@@ -299,6 +317,37 @@ namespace ValidadorDuplicidade
         private void ResultadoLista1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void DataPenultimaSemana_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crownCheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void headerLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FiltroValor_CheckedChanged_1(object sender, EventArgs e)
+        {
+            f.Valor = FiltroValor.Checked;
+            contador = 0;
+            contador1 = 0;
+            contador2 = 0;
+
+            init();
+            Colorir();
         }
     }
 

@@ -86,6 +86,7 @@ namespace ValidadorDuplicidade
                         );
                     }
 
+
                     for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
                     {
                         Registro registro = new Registro
@@ -129,10 +130,6 @@ namespace ValidadorDuplicidade
                     string nome2 = worksheet2.Name;
                     string nome3 = worksheet3.Name;
 
-                    //var duplicadosDentroda1 = Lista1
-                    //    .Where(x => Lista1.Count(y => x.NumeroRegistro == y.NumeroRegistro) > 1).ToList();
-
-
 
                     var duplicadosDentroda2 = Lista2
                         .Where(x => Lista2.Count(y => x.NumeroRegistro == y.NumeroRegistro) > 1)
@@ -157,14 +154,21 @@ namespace ValidadorDuplicidade
 
                     ).ToList();
 
-                    duplicadosTodos = Lista3
-                    .Where(x =>
-                        Lista2.Any(y => x.NomeRegistro == y.NomeRegistro)
-                        ||
-                        (Lista1.Any(z => x.NomeRegistro == z.NomeRegistro) || Lista3.Count(z => x.NomeRegistro == z.NomeRegistro) > 1)
 
-                 ) 
-                    .ToList();
+                    //compara a lista 3 com a lista 1 e 2, caso aconteça duplicidade dentro da lista 3, tambem retorna esssas duplicidades
+                    duplicadosTodos = Lista3
+                        .Where(x =>
+                            Lista2.Any(y => y.NomeRegistro == x.NomeRegistro)
+                            ||
+                            Lista1.Any(z => z.NomeRegistro == x.NomeRegistro)
+                            ||
+                            Lista3.Count(z => z.NomeRegistro == x.NomeRegistro) > 1
+                        )
+                       
+                        .ToList();
+
+
+
 
 
                     Dictionary<string, string> nomes = new()

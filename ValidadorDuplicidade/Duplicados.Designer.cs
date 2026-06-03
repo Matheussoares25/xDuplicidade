@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle13 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle14 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle15 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle16 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle17 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle18 = new DataGridViewCellStyle();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
@@ -50,8 +50,6 @@
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
-            panel1 = new ReaLTaiizor.Controls.Panel();
-            FiltroValor = new ReaLTaiizor.Controls.CrownCheckBox();
             label1 = new Label();
             QtdResultado = new ReaLTaiizor.Controls.SkyTextBox();
             ResultadoLista1 = new ReaLTaiizor.Controls.PoisonDataGridView();
@@ -74,15 +72,25 @@
             panel5 = new ReaLTaiizor.Controls.Panel();
             toolTip1 = new ToolTip(components);
             panel3 = new ReaLTaiizor.Controls.Panel();
+            DataUltimaSemana = new ReaLTaiizor.Controls.SkyLabel();
             panel6 = new ReaLTaiizor.Controls.Panel();
-            DataPenultimaSemana = new Label();
             QtdTabela2 = new ReaLTaiizor.Controls.SkyTextBox();
-            DataUltimaSemana = new Label();
+            DataPenultimaSemana = new ReaLTaiizor.Controls.SkyLabel();
             panel4 = new ReaLTaiizor.Controls.Panel();
             panel7 = new ReaLTaiizor.Controls.Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             headerLabel1 = new ReaLTaiizor.Controls.HeaderLabel();
-            panel1.SuspendLayout();
+            headerLabel4 = new ReaLTaiizor.Controls.HeaderLabel();
+            infoIcon3 = new ReaLTaiizor.Controls.InfoIcon();
+            headerLabel5 = new ReaLTaiizor.Controls.HeaderLabel();
+            infoIcon4 = new ReaLTaiizor.Controls.InfoIcon();
+            headerLabel6 = new ReaLTaiizor.Controls.HeaderLabel();
+            infoIcon1 = new ReaLTaiizor.Controls.InfoIcon();
+            headerLabel2 = new ReaLTaiizor.Controls.HeaderLabel();
+            lostBorderPanel1 = new ReaLTaiizor.Controls.LostBorderPanel();
+            FiltroValor = new ReaLTaiizor.Controls.AloneCheckBox();
+            lostBorderPanel2 = new ReaLTaiizor.Controls.LostBorderPanel();
+            lostBorderPanel3 = new ReaLTaiizor.Controls.LostBorderPanel();
             ((System.ComponentModel.ISupportInitialize)ResultadoLista1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TabelaResultado).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ResultadoLista2).BeginInit();
@@ -93,6 +101,9 @@
             panel4.SuspendLayout();
             panel7.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            lostBorderPanel1.SuspendLayout();
+            lostBorderPanel2.SuspendLayout();
+            lostBorderPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewTextBoxColumn1
@@ -179,44 +190,14 @@
             dataGridViewTextBoxColumn12.MinimumWidth = 6;
             dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panel1.BackColor = Color.DimGray;
-            panel1.Controls.Add(FiltroValor);
-            panel1.EdgeColor = Color.Gray;
-            panel1.Location = new Point(1141, 16);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(6, 7, 6, 7);
-            panel1.Size = new Size(216, 41);
-            panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            panel1.TabIndex = 1;
-            panel1.Text = "panel1";
-            // 
-            // FiltroValor
-            // 
-            FiltroValor.AutoSize = true;
-            FiltroValor.BackColor = Color.Black;
-            FiltroValor.CheckAlign = ContentAlignment.TopLeft;
-            FiltroValor.Dock = DockStyle.Fill;
-            FiltroValor.Location = new Point(6, 7);
-            FiltroValor.Margin = new Padding(3, 4, 3, 4);
-            FiltroValor.Name = "FiltroValor";
-            FiltroValor.Padding = new Padding(7, 8, 7, 8);
-            FiltroValor.Size = new Size(204, 27);
-            FiltroValor.TabIndex = 0;
-            FiltroValor.Text = "Nome + Valor";
-            FiltroValor.CheckedChanged += FiltroValor_CheckedChanged;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ActiveCaptionText;
             label1.ForeColor = Color.White;
-            label1.Location = new Point(11, 19);
+            label1.Location = new Point(10, 14);
             label1.Name = "label1";
-            label1.Size = new Size(240, 20);
+            label1.Size = new Size(190, 15);
             label1.TabIndex = 5;
             label1.Text = "Items Duplicados na Semana Atual";
             label1.Click += label1_Click;
@@ -232,12 +213,11 @@
             QtdResultado.BorderColorD = Color.FromArgb(254, 254, 254);
             QtdResultado.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdResultado.ForeColor = Color.FromArgb(27, 94, 137);
-            QtdResultado.Location = new Point(1008, 11);
-            QtdResultado.Margin = new Padding(3, 4, 3, 4);
+            QtdResultado.Location = new Point(881, 8);
             QtdResultado.MaxLength = 32767;
             QtdResultado.MultiLine = false;
             QtdResultado.Name = "QtdResultado";
-            QtdResultado.Size = new Size(96, 24);
+            QtdResultado.Size = new Size(84, 21);
             QtdResultado.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             QtdResultado.TabIndex = 8;
             QtdResultado.Text = "skyTextBox1";
@@ -248,6 +228,7 @@
             // ResultadoLista1
             // 
             ResultadoLista1.AllowDrop = true;
+            ResultadoLista1.AllowUserToAddRows = false;
             ResultadoLista1.AllowUserToOrderColumns = true;
             ResultadoLista1.AllowUserToResizeRows = false;
             ResultadoLista1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -255,45 +236,45 @@
             ResultadoLista1.BorderStyle = BorderStyle.None;
             ResultadoLista1.CellBorderStyle = DataGridViewCellBorderStyle.None;
             ResultadoLista1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Orange;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkOrange;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            ResultadoLista1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.Orange;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle10.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle10.SelectionBackColor = Color.DarkOrange;
+            dataGridViewCellStyle10.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            ResultadoLista1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             ResultadoLista1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ResultadoLista1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            ResultadoLista1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.White;
+            dataGridViewCellStyle11.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
+            ResultadoLista1.DefaultCellStyle = dataGridViewCellStyle11;
             ResultadoLista1.EnableHeadersVisualStyles = false;
             ResultadoLista1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             ResultadoLista1.GridColor = Color.FromArgb(255, 255, 255);
-            ResultadoLista1.Location = new Point(6, 11);
-            ResultadoLista1.Margin = new Padding(3, 4, 3, 4);
+            ResultadoLista1.Location = new Point(5, 8);
             ResultadoLista1.Name = "ResultadoLista1";
             ResultadoLista1.ReadOnly = true;
             ResultadoLista1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Black;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            ResultadoLista1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.Black;
+            dataGridViewCellStyle12.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle12.SelectionBackColor = Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
+            ResultadoLista1.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             ResultadoLista1.RowHeadersVisible = false;
             ResultadoLista1.RowHeadersWidth = 51;
             ResultadoLista1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            ResultadoLista1.ScrollBars = ScrollBars.None;
             ResultadoLista1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ResultadoLista1.Size = new Size(1136, 215);
+            ResultadoLista1.Size = new Size(993, 148);
             ResultadoLista1.TabIndex = 9;
             ResultadoLista1.CellContentClick += ResultadoLista1_CellContentClick;
             // 
@@ -331,52 +312,52 @@
             // 
             // TabelaResultado
             // 
+            TabelaResultado.AllowUserToAddRows = false;
             TabelaResultado.AllowUserToResizeRows = false;
             TabelaResultado.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             TabelaResultado.BackgroundColor = Color.FromArgb(255, 255, 255);
             TabelaResultado.BorderStyle = BorderStyle.None;
             TabelaResultado.CellBorderStyle = DataGridViewCellBorderStyle.None;
             TabelaResultado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.Black;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle4.SelectionBackColor = Color.DimGray;
-            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            TabelaResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = Color.Black;
+            dataGridViewCellStyle13.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle13.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle13.SelectionBackColor = Color.DimGray;
+            dataGridViewCellStyle13.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle13.WrapMode = DataGridViewTriState.True;
+            TabelaResultado.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             TabelaResultado.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TabelaResultado.Columns.AddRange(new DataGridViewColumn[] { Documento, Nome, Valor, Vencimento });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Silver;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            TabelaResultado.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = Color.White;
+            dataGridViewCellStyle14.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle14.ForeColor = Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = Color.Silver;
+            dataGridViewCellStyle14.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle14.WrapMode = DataGridViewTriState.False;
+            TabelaResultado.DefaultCellStyle = dataGridViewCellStyle14;
             TabelaResultado.EnableHeadersVisualStyles = false;
             TabelaResultado.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             TabelaResultado.GridColor = Color.FromArgb(255, 255, 255);
-            TabelaResultado.Location = new Point(6, 11);
-            TabelaResultado.Margin = new Padding(3, 4, 3, 4);
+            TabelaResultado.Location = new Point(5, 8);
             TabelaResultado.Name = "TabelaResultado";
             TabelaResultado.ReadOnly = true;
             TabelaResultado.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.Black;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle6.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            TabelaResultado.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = Color.Black;
+            dataGridViewCellStyle15.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle15.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle15.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle15.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle15.WrapMode = DataGridViewTriState.True;
+            TabelaResultado.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             TabelaResultado.RowHeadersVisible = false;
             TabelaResultado.RowHeadersWidth = 51;
             TabelaResultado.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             TabelaResultado.ScrollBars = ScrollBars.None;
             TabelaResultado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            TabelaResultado.Size = new Size(1136, 205);
+            TabelaResultado.Size = new Size(993, 140);
             TabelaResultado.TabIndex = 0;
             TabelaResultado.CellContentClick += TabelaResultado_CellClick;
             // 
@@ -414,51 +395,52 @@
             // 
             // ResultadoLista2
             // 
+            ResultadoLista2.AllowUserToAddRows = false;
             ResultadoLista2.AllowUserToResizeRows = false;
             ResultadoLista2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ResultadoLista2.BackgroundColor = Color.FromArgb(255, 255, 255);
             ResultadoLista2.BorderStyle = BorderStyle.None;
             ResultadoLista2.CellBorderStyle = DataGridViewCellBorderStyle.None;
             ResultadoLista2.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.Crimson;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle7.SelectionBackColor = Color.Red;
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            ResultadoLista2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = Color.Crimson;
+            dataGridViewCellStyle16.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle16.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle16.SelectionBackColor = Color.Red;
+            dataGridViewCellStyle16.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle16.WrapMode = DataGridViewTriState.True;
+            ResultadoLista2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             ResultadoLista2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ResultadoLista2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20 });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Gainsboro;
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            ResultadoLista2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = Color.White;
+            dataGridViewCellStyle17.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle17.ForeColor = Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = Color.Gainsboro;
+            dataGridViewCellStyle17.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
+            ResultadoLista2.DefaultCellStyle = dataGridViewCellStyle17;
             ResultadoLista2.EnableHeadersVisualStyles = false;
             ResultadoLista2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             ResultadoLista2.GridColor = Color.FromArgb(255, 255, 255);
-            ResultadoLista2.Location = new Point(6, 11);
-            ResultadoLista2.Margin = new Padding(3, 4, 3, 4);
+            ResultadoLista2.Location = new Point(5, 8);
             ResultadoLista2.Name = "ResultadoLista2";
             ResultadoLista2.ReadOnly = true;
             ResultadoLista2.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.Black;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle9.SelectionBackColor = Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            ResultadoLista2.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = Color.Black;
+            dataGridViewCellStyle18.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle18.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle18.SelectionBackColor = Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle18.WrapMode = DataGridViewTriState.True;
+            ResultadoLista2.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             ResultadoLista2.RowHeadersVisible = false;
             ResultadoLista2.RowHeadersWidth = 51;
             ResultadoLista2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            ResultadoLista2.ScrollBars = ScrollBars.None;
             ResultadoLista2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ResultadoLista2.Size = new Size(1124, 211);
+            ResultadoLista2.Size = new Size(983, 144);
             ResultadoLista2.TabIndex = 10;
             ResultadoLista2.CellContentClick += ResultadoLista2_CellContentClick;
             // 
@@ -505,12 +487,11 @@
             QtdTabela1.BorderColorD = Color.FromArgb(254, 254, 254);
             QtdTabela1.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdTabela1.ForeColor = Color.FromArgb(27, 94, 137);
-            QtdTabela1.Location = new Point(1008, 7);
-            QtdTabela1.Margin = new Padding(3, 4, 3, 4);
+            QtdTabela1.Location = new Point(881, 5);
             QtdTabela1.MaxLength = 32767;
             QtdTabela1.MultiLine = false;
             QtdTabela1.Name = "QtdTabela1";
-            QtdTabela1.Size = new Size(96, 24);
+            QtdTabela1.Size = new Size(84, 21);
             QtdTabela1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             QtdTabela1.TabIndex = 11;
             QtdTabela1.Text = "skyTextBox1";
@@ -526,11 +507,10 @@
             panel2.Controls.Add(QtdResultado);
             panel2.Controls.Add(label1);
             panel2.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel2.Location = new Point(3, 4);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Padding = new Padding(6, 7, 6, 7);
-            panel2.Size = new Size(1159, 269);
+            panel2.Padding = new Padding(5);
+            panel2.Size = new Size(1013, 188);
             panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel2.TabIndex = 12;
             panel2.Text = "panel2";
@@ -541,11 +521,10 @@
             panel5.BackColor = Color.FromArgb(49, 61, 63);
             panel5.Controls.Add(TabelaResultado);
             panel5.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel5.Location = new Point(6, 40);
-            panel5.Margin = new Padding(3, 4, 3, 4);
+            panel5.Location = new Point(5, 30);
             panel5.Name = "panel5";
-            panel5.Padding = new Padding(6, 7, 6, 7);
-            panel5.Size = new Size(1147, 223);
+            panel5.Padding = new Padding(5);
+            panel5.Size = new Size(1003, 153);
             panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel5.TabIndex = 17;
             panel5.Text = "panel5";
@@ -554,18 +533,29 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(39, 51, 63);
+            panel3.Controls.Add(DataUltimaSemana);
             panel3.Controls.Add(panel6);
-            panel3.Controls.Add(DataPenultimaSemana);
             panel3.Controls.Add(QtdTabela2);
             panel3.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel3.Location = new Point(3, 281);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(3, 197);
             panel3.Name = "panel3";
-            panel3.Padding = new Padding(6, 7, 6, 7);
-            panel3.Size = new Size(1159, 269);
+            panel3.Padding = new Padding(5);
+            panel3.Size = new Size(1013, 188);
             panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel3.TabIndex = 13;
             panel3.Text = "panel3";
+            // 
+            // DataUltimaSemana
+            // 
+            DataUltimaSemana.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DataUltimaSemana.AutoSize = true;
+            DataUltimaSemana.Font = new Font("Segoe UI Variable Small", 9.75F);
+            DataUltimaSemana.ForeColor = Color.White;
+            DataUltimaSemana.Location = new Point(15, 9);
+            DataUltimaSemana.Name = "DataUltimaSemana";
+            DataUltimaSemana.Size = new Size(64, 17);
+            DataUltimaSemana.TabIndex = 19;
+            DataUltimaSemana.Text = "skyLabel1";
             // 
             // panel6
             // 
@@ -573,25 +563,13 @@
             panel6.BackColor = Color.FromArgb(49, 61, 63);
             panel6.Controls.Add(ResultadoLista2);
             panel6.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel6.Location = new Point(11, 35);
-            panel6.Margin = new Padding(3, 4, 3, 4);
+            panel6.Location = new Point(10, 26);
             panel6.Name = "panel6";
-            panel6.Padding = new Padding(6, 7, 6, 7);
-            panel6.Size = new Size(1136, 228);
+            panel6.Padding = new Padding(5);
+            panel6.Size = new Size(993, 157);
             panel6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel6.TabIndex = 17;
             panel6.Text = "panel6";
-            // 
-            // DataPenultimaSemana
-            // 
-            DataPenultimaSemana.AutoSize = true;
-            DataPenultimaSemana.BackColor = SystemColors.ActiveCaptionText;
-            DataPenultimaSemana.ForeColor = Color.White;
-            DataPenultimaSemana.Location = new Point(11, 7);
-            DataPenultimaSemana.Name = "DataPenultimaSemana";
-            DataPenultimaSemana.Size = new Size(131, 20);
-            DataPenultimaSemana.TabIndex = 12;
-            DataPenultimaSemana.Text = "Penultima Semana";
             // 
             // QtdTabela2
             // 
@@ -604,12 +582,11 @@
             QtdTabela2.BorderColorD = Color.FromArgb(254, 254, 254);
             QtdTabela2.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdTabela2.ForeColor = Color.FromArgb(27, 94, 137);
-            QtdTabela2.Location = new Point(1008, -1);
-            QtdTabela2.Margin = new Padding(3, 4, 3, 4);
+            QtdTabela2.Location = new Point(881, 5);
             QtdTabela2.MaxLength = 32767;
             QtdTabela2.MultiLine = false;
             QtdTabela2.Name = "QtdTabela2";
-            QtdTabela2.Size = new Size(96, 24);
+            QtdTabela2.Size = new Size(84, 21);
             QtdTabela2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             QtdTabela2.TabIndex = 12;
             QtdTabela2.Text = "skyTextBox1";
@@ -617,30 +594,30 @@
             QtdTabela2.UnknownBackColor = Color.FromArgb(43, 43, 43);
             QtdTabela2.UseSystemPasswordChar = false;
             // 
-            // DataUltimaSemana
+            // DataPenultimaSemana
             // 
-            DataUltimaSemana.AutoSize = true;
-            DataUltimaSemana.BackColor = SystemColors.ActiveCaptionText;
-            DataUltimaSemana.ForeColor = Color.White;
-            DataUltimaSemana.Location = new Point(11, 7);
-            DataUltimaSemana.Name = "DataUltimaSemana";
-            DataUltimaSemana.Size = new Size(110, 20);
-            DataUltimaSemana.TabIndex = 9;
-            DataUltimaSemana.Text = "Ultima Semana";
+            DataPenultimaSemana.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            DataPenultimaSemana.AutoSize = true;
+            DataPenultimaSemana.Font = new Font("Segoe UI Variable Small", 9.75F);
+            DataPenultimaSemana.ForeColor = Color.White;
+            DataPenultimaSemana.Location = new Point(15, 6);
+            DataPenultimaSemana.Name = "DataPenultimaSemana";
+            DataPenultimaSemana.Size = new Size(64, 17);
+            DataPenultimaSemana.TabIndex = 18;
+            DataPenultimaSemana.Text = "skyLabel1";
             // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel4.BackColor = Color.FromArgb(39, 51, 63);
-            panel4.Controls.Add(DataUltimaSemana);
+            panel4.Controls.Add(DataPenultimaSemana);
             panel4.Controls.Add(QtdTabela1);
             panel4.Controls.Add(panel7);
             panel4.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel4.Location = new Point(3, 558);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(3, 391);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(6, 7, 6, 7);
-            panel4.Size = new Size(1159, 271);
+            panel4.Padding = new Padding(5);
+            panel4.Size = new Size(1013, 190);
             panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel4.TabIndex = 14;
             panel4.Text = "panel4";
@@ -651,11 +628,10 @@
             panel7.BackColor = Color.FromArgb(49, 61, 63);
             panel7.Controls.Add(ResultadoLista1);
             panel7.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel7.Location = new Point(6, 32);
-            panel7.Margin = new Padding(3, 4, 3, 4);
+            panel7.Location = new Point(5, 24);
             panel7.Name = "panel7";
-            panel7.Padding = new Padding(6, 7, 6, 7);
-            panel7.Size = new Size(1147, 232);
+            panel7.Padding = new Padding(5);
+            panel7.Size = new Size(1003, 161);
             panel7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel7.TabIndex = 17;
             panel7.Text = "panel7";
@@ -669,14 +645,13 @@
             tableLayoutPanel1.Controls.Add(panel4, 0, 2);
             tableLayoutPanel1.Controls.Add(panel2, 0, 0);
             tableLayoutPanel1.Controls.Add(panel3, 0, 1);
-            tableLayoutPanel1.Location = new Point(195, 120);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel1.Location = new Point(171, 131);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel1.Size = new Size(1165, 833);
+            tableLayoutPanel1.Size = new Size(1019, 584);
             tableLayoutPanel1.TabIndex = 15;
             // 
             // headerLabel1
@@ -685,29 +660,178 @@
             headerLabel1.BackColor = Color.Transparent;
             headerLabel1.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold);
             headerLabel1.ForeColor = Color.FromArgb(255, 255, 255);
-            headerLabel1.Location = new Point(195, 72);
+            headerLabel1.Location = new Point(177, 8);
             headerLabel1.Name = "headerLabel1";
-            headerLabel1.Size = new Size(384, 24);
+            headerLabel1.Size = new Size(173, 18);
             headerLabel1.TabIndex = 16;
-            headerLabel1.Text = "Os items duplicados na Semana vigente";
+            headerLabel1.Text = "Descritivo - Registros";
+            headerLabel1.Click += headerLabel1_Click;
+            // 
+            // headerLabel4
+            // 
+            headerLabel4.BackColor = Color.Transparent;
+            headerLabel4.Font = new Font("Segoe UI Variable Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            headerLabel4.ForeColor = Color.FromArgb(255, 255, 255);
+            headerLabel4.Location = new Point(40, 28);
+            headerLabel4.Name = "headerLabel4";
+            headerLabel4.Size = new Size(273, 23);
+            headerLabel4.TabIndex = 23;
+            headerLabel4.Text = "Itens duplicados na ultima semana (Nome e Valor)";
+            // 
+            // infoIcon3
+            // 
+            infoIcon3.BackColor = Color.Transparent;
+            infoIcon3.BaseColor = Color.Crimson;
+            infoIcon3.CircleColor = Color.Crimson;
+            infoIcon3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            infoIcon3.ForeColor = Color.Crimson;
+            infoIcon3.Location = new Point(19, 29);
+            infoIcon3.Name = "infoIcon3";
+            infoIcon3.Size = new Size(15, 17);
+            infoIcon3.String = "¡";
+            infoIcon3.TabIndex = 22;
+            infoIcon3.Text = "infoIcon3";
+            // 
+            // headerLabel5
+            // 
+            headerLabel5.BackColor = Color.Transparent;
+            headerLabel5.Font = new Font("Segoe UI Variable Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            headerLabel5.ForeColor = Color.FromArgb(255, 255, 255);
+            headerLabel5.Location = new Point(40, 52);
+            headerLabel5.Name = "headerLabel5";
+            headerLabel5.Size = new Size(211, 17);
+            headerLabel5.TabIndex = 25;
+            headerLabel5.Text = "Itens duplicados nas duas semanas";
+            // 
+            // infoIcon4
+            // 
+            infoIcon4.BackColor = Color.Transparent;
+            infoIcon4.BaseColor = Color.MediumBlue;
+            infoIcon4.CircleColor = Color.MediumBlue;
+            infoIcon4.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            infoIcon4.ForeColor = Color.MediumBlue;
+            infoIcon4.Location = new Point(19, 53);
+            infoIcon4.Name = "infoIcon4";
+            infoIcon4.Size = new Size(15, 17);
+            infoIcon4.String = "¡";
+            infoIcon4.TabIndex = 24;
+            infoIcon4.Text = "infoIcon4";
+            // 
+            // headerLabel6
+            // 
+            headerLabel6.BackColor = Color.Transparent;
+            headerLabel6.Font = new Font("Segoe UI Variable Text", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            headerLabel6.ForeColor = Color.FromArgb(255, 255, 255);
+            headerLabel6.Location = new Point(40, 3);
+            headerLabel6.Name = "headerLabel6";
+            headerLabel6.Size = new Size(290, 23);
+            headerLabel6.TabIndex = 27;
+            headerLabel6.Text = "Itens duplicados na penultima semana (Nome e Valor)";
+            // 
+            // infoIcon1
+            // 
+            infoIcon1.BackColor = Color.Transparent;
+            infoIcon1.BaseColor = Color.Yellow;
+            infoIcon1.CircleColor = Color.Yellow;
+            infoIcon1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            infoIcon1.ForeColor = Color.Yellow;
+            infoIcon1.Location = new Point(19, 4);
+            infoIcon1.Name = "infoIcon1";
+            infoIcon1.Size = new Size(15, 17);
+            infoIcon1.String = "¡";
+            infoIcon1.TabIndex = 18;
+            infoIcon1.Text = "infoIcon1";
+            // 
+            // headerLabel2
+            // 
+            headerLabel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            headerLabel2.AutoSize = true;
+            headerLabel2.BackColor = Color.Transparent;
+            headerLabel2.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold);
+            headerLabel2.ForeColor = Color.FromArgb(255, 255, 255);
+            headerLabel2.Location = new Point(971, 6);
+            headerLabel2.Name = "headerLabel2";
+            headerLabel2.Size = new Size(47, 18);
+            headerLabel2.TabIndex = 17;
+            headerLabel2.Text = "Filtro";
+            // 
+            // lostBorderPanel1
+            // 
+            lostBorderPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            lostBorderPanel1.BackColor = Color.FromArgb(35, 35, 35);
+            lostBorderPanel1.BorderColor = Color.DimGray;
+            lostBorderPanel1.Controls.Add(FiltroValor);
+            lostBorderPanel1.Font = new Font("Segoe UI", 12F);
+            lostBorderPanel1.ForeColor = Color.White;
+            lostBorderPanel1.Location = new Point(968, 18);
+            lostBorderPanel1.Name = "lostBorderPanel1";
+            lostBorderPanel1.Padding = new Padding(5);
+            lostBorderPanel1.ShowText = true;
+            lostBorderPanel1.Size = new Size(222, 103);
+            lostBorderPanel1.TabIndex = 29;
+            // 
+            // FiltroValor
+            // 
+            FiltroValor.BackColor = Color.Transparent;
+            FiltroValor.Checked = false;
+            FiltroValor.EnabledCalc = true;
+            FiltroValor.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FiltroValor.ForeColor = Color.White;
+            FiltroValor.Location = new Point(44, 43);
+            FiltroValor.Name = "FiltroValor";
+            FiltroValor.Size = new Size(135, 17);
+            FiltroValor.TabIndex = 32;
+            FiltroValor.Text = "Nome e Valor Iguais";
+            FiltroValor.CheckedChanged += FiltroValor_CheckedChanged_1;
+            // 
+            // lostBorderPanel2
+            // 
+            lostBorderPanel2.BackColor = Color.FromArgb(35, 35, 35);
+            lostBorderPanel2.BorderColor = Color.DimGray;
+            lostBorderPanel2.Controls.Add(lostBorderPanel3);
+            lostBorderPanel2.Font = new Font("Segoe UI", 12F);
+            lostBorderPanel2.ForeColor = Color.White;
+            lostBorderPanel2.Location = new Point(174, 18);
+            lostBorderPanel2.Name = "lostBorderPanel2";
+            lostBorderPanel2.Padding = new Padding(5);
+            lostBorderPanel2.ShowText = true;
+            lostBorderPanel2.Size = new Size(488, 103);
+            lostBorderPanel2.TabIndex = 30;
+            // 
+            // lostBorderPanel3
+            // 
+            lostBorderPanel3.BackColor = Color.FromArgb(35, 35, 35);
+            lostBorderPanel3.BorderColor = Color.DimGray;
+            lostBorderPanel3.Controls.Add(headerLabel6);
+            lostBorderPanel3.Controls.Add(headerLabel5);
+            lostBorderPanel3.Controls.Add(infoIcon1);
+            lostBorderPanel3.Controls.Add(infoIcon3);
+            lostBorderPanel3.Controls.Add(infoIcon4);
+            lostBorderPanel3.Controls.Add(headerLabel4);
+            lostBorderPanel3.Font = new Font("Segoe UI", 12F);
+            lostBorderPanel3.ForeColor = Color.White;
+            lostBorderPanel3.Location = new Point(18, 14);
+            lostBorderPanel3.Name = "lostBorderPanel3";
+            lostBorderPanel3.Padding = new Padding(5);
+            lostBorderPanel3.ShowText = true;
+            lostBorderPanel3.Size = new Size(456, 77);
+            lostBorderPanel3.TabIndex = 31;
             // 
             // Duplicados
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(35, 35, 35);
-            ClientSize = new Size(1555, 969);
-            Controls.Add(panel1);
+            ClientSize = new Size(1361, 727);
             Controls.Add(headerLabel1);
+            Controls.Add(headerLabel2);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(lostBorderPanel1);
+            Controls.Add(lostBorderPanel2);
             Name = "Duplicados";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Duplicados";
-            TopMost = true;
             WindowState = FormWindowState.Maximized;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ResultadoLista1).EndInit();
             ((System.ComponentModel.ISupportInitialize)TabelaResultado).EndInit();
             ((System.ComponentModel.ISupportInitialize)ResultadoLista2).EndInit();
@@ -721,6 +845,9 @@
             panel4.PerformLayout();
             panel7.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
+            lostBorderPanel1.ResumeLayout(false);
+            lostBorderPanel2.ResumeLayout(false);
+            lostBorderPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -741,8 +868,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private ReaLTaiizor.Controls.Panel panel1;
-        private ReaLTaiizor.Controls.CrownCheckBox FiltroValor;
         private Label label1;
         private ReaLTaiizor.Controls.PoisonDataGridView ResultadoLista2;
         private ReaLTaiizor.Controls.PoisonDataGridView TabelaResultado;
@@ -752,9 +877,7 @@
         private ReaLTaiizor.Controls.Panel panel2;
         private ToolTip toolTip1;
         private ReaLTaiizor.Controls.Panel panel3;
-        private Label DataUltimaSemana;
         private ReaLTaiizor.Controls.Panel panel4;
-        private Label DataPenultimaSemana;
         private ReaLTaiizor.Controls.SkyTextBox QtdTabela2;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
@@ -773,5 +896,18 @@
         private ReaLTaiizor.Controls.Panel panel5;
         private ReaLTaiizor.Controls.Panel panel6;
         private ReaLTaiizor.Controls.Panel panel7;
+        private ReaLTaiizor.Controls.SkyLabel DataUltimaSemana;
+        private ReaLTaiizor.Controls.SkyLabel DataPenultimaSemana;
+        private ReaLTaiizor.Controls.HeaderLabel headerLabel4;
+        private ReaLTaiizor.Controls.InfoIcon infoIcon3;
+        private ReaLTaiizor.Controls.HeaderLabel headerLabel5;
+        private ReaLTaiizor.Controls.InfoIcon infoIcon4;
+        private ReaLTaiizor.Controls.HeaderLabel headerLabel6;
+        private ReaLTaiizor.Controls.InfoIcon infoIcon1;
+        private ReaLTaiizor.Controls.HeaderLabel headerLabel2;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel1;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel2;
+        private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel3;
+        private ReaLTaiizor.Controls.AloneCheckBox FiltroValor;
     }
 }
