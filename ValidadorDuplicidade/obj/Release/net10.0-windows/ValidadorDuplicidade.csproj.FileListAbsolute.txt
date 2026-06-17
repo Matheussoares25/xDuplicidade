@@ -32,3 +32,5 @@ C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Release\
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Release\net10.0-windows\ValidadorDuplicidade.pdb
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Release\net10.0-windows\ValidadorDuplicidade.genruntimeconfig.cache
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Release\net10.0-windows\ref\ValidadorDuplicidade.dll
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Release\net10.0-windows\ValidadorDuplicidade.Duplicados.resources
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Release\net10.0-windows\ValidadorDuplicidade.sourcelink.json

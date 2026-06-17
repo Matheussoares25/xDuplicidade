@@ -243,6 +243,15 @@
           "Microsoft.WindowsDesktop.App.WindowsForms"
         ]
       },
+      "RibbonWinForms/5.0.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net461/System.Windows.Forms.Ribbon.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Windows.Forms.Ribbon.dll": {}
+        }
+      },
       "System.ComponentModel.Annotations/5.0.0": {
         "type": "package",
         "compile": {
@@ -630,6 +639,25 @@
         "realtaiizor.nuspec"
       ]
     },
+    "RibbonWinForms/5.0.1.1": {
+      "sha512": "3JeS/WehB/5HFsG5xIhk+VoenWnSXEGFnsq5t14usuaj7eqfl3/hEnlAgdmavifJSS2qeepXMw2Zd716USjrUA==",
+      "type": "package",
+      "path": "ribbonwinforms/5.0.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/System.Windows.Forms.Ribbon.dll",
+        "lib/net40/System.Windows.Forms.Ribbon.dll",
+        "lib/net45/System.Windows.Forms.Ribbon.dll",
+        "lib/net46/System.Windows.Forms.Ribbon.dll",
+        "lib/net461/System.Windows.Forms.Ribbon.dll",
+        "lib/net471/System.Windows.Forms.Ribbon.dll",
+        "lib/net472/System.Windows.Forms.Ribbon.dll",
+        "lib/net48/System.Windows.Forms.Ribbon.dll",
+        "ribbonwinforms.5.0.1.1.nupkg.sha512",
+        "ribbonwinforms.nuspec"
+      ]
+    },
     "System.ComponentModel.Annotations/5.0.0": {
       "sha512": "dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
       "type": "package",
@@ -726,7 +754,8 @@
       "EPPlus >= 8.5.4",
       "MaterialSkin.2 >= 2.3.1",
       "Ookii.Dialogs.WinForms >= 4.0.0",
-      "ReaLTaiizor >= 3.8.1.8"
+      "ReaLTaiizor >= 3.8.1.8",
+      "RibbonWinForms >= 5.0.1.1"
     ]
   },
   "packageFolders": {
@@ -796,6 +825,10 @@
           "ReaLTaiizor": {
             "target": "Package",
             "version": "[3.8.1.8, )"
+          },
+          "RibbonWinForms": {
+            "target": "Package",
+            "version": "[5.0.1.1, )"
           }
         },
         "imports": [
@@ -1110,5 +1143,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'RibbonWinForms 5.0.1.1' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0-windows7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "RibbonWinForms",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    }
+  ]
 }

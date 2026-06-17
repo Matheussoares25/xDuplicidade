@@ -34,3 +34,4 @@ C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\bin\Debug\ne
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.Properties.Resources.resources
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.sourcelink.json
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.Duplicados.resources
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\bin\Debug\net10.0-windows\System.Windows.Forms.Ribbon.dll

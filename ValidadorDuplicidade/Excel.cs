@@ -33,34 +33,16 @@ namespace ValidadorDuplicidade
 
                 if (string.IsNullOrWhiteSpace(filePath))
                 {
-                    MessageBox.Show(
-                        "Nenhum arquivo selecionado.",
-                        "Erro",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-
-                    return (
-                        new List<Registro>(),
-                        new List<Registro>(),
-                        new List<Registro>(),
-                        new Dictionary<string, List<Registro>>(),
-                        new Dictionary<string, string>()
-                    );
+                    throw new Erros(404, "Caminho do arquivo não pode ser vazio.");
                 }
 
                 using (ExcelPackage package = new ExcelPackage(new FileInfo(filePath)))
                 {
 
-                    if (package?.Workbook?.Worksheets == null || package.Workbook.Worksheets.Count < 2)
+                    if (package?.Workbook?.Worksheets == null || package.Workbook.Worksheets.Count < 3)
                     {
-                        return (
-                            new List<Registro>(),
-                            new List<Registro>(),
-                            new List<Registro>(),
-                            new Dictionary<string, List<Registro>>(),
-                            new Dictionary<string, string>()
-                        );
+                        throw new Erros(406, "O arquivo deve conter pelo menos 3 planilhas." );
+                        
                     }
 
                     ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
@@ -71,56 +53,98 @@ namespace ValidadorDuplicidade
                         worksheet2.Dimension == null ||
                         worksheet3.Dimension == null)
                     {
-                        MessageBox.Show(
-                            "Uma ou mais planilhas não existem.",
-                            "Erro",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error
-                        );
-                        return (
-                            new List<Registro>(),
-                            new List<Registro>(),
-                            new List<Registro>(),
-                            new Dictionary<string, List<Registro>>(),
-                            new Dictionary<string, string>()
-                        );
+                         throw new Erros(405, "Uma ou mais planilhas estão vazias ou não possuem dados.");
                     }
 
 
                     for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
                     {
+                        string nomeCel = worksheet.Cells[row, 1].Text?.Trim() ?? string.Empty;
+                        string tipoCel = worksheet.Cells[row, 2].Text?.Trim() ?? string.Empty;
+                        string dataCel = worksheet.Cells[row, 3].Text?.Trim() ?? string.Empty;
+                        string valorCel = worksheet.Cells[row, 4].Text?.Trim() ?? string.Empty;
+
+                        if(string.IsNullOrEmpty(nomeCel) && string.IsNullOrEmpty(tipoCel) && string.IsNullOrEmpty(dataCel) && string.IsNullOrEmpty(valorCel))
+                        {
+                           continue; 
+                        }
+
+
+
                         Registro registro = new Registro
                         {
-                            NumeroRegistro = worksheet.Cells[row, 1].Text,
-                            NomeRegistro = worksheet.Cells[row, 2].Text,
-                            DataRegistro =  worksheet.Cells[row, 3].Text,
-                            ValorRegistro =  worksheet.Cells[row, 4].Text
+                            NomeRegistro = nomeCel,
+                            TipoRegistro = tipoCel,
+                            DataRegistro = dataCel,
+                            ValorRegistro = valorCel
                         };
+
+                        //Tras todos registros inclusive os que estao em branco;
+                        //Registro registro = new Registro()
+                        //{
+                        //    NomeRegistro = worksheet.Cells[row, 1].Text,
+                        //    TipoRegistro = worksheet.Cells[row, 2].Text,
+                        //    DataRegistro = worksheet.Cells[row, 3].Text,
+                        //    ValorRegistro = worksheet.Cells[row, 4].Text
+
+                        //};
+
+
 
                         Lista1.Add(registro);
                     }
 
                     for (int row = 2; row <= worksheet2.Dimension.End.Row; row++)
                     {
+                        string nomeCel = worksheet2.Cells[row, 1].Text?.Trim() ?? string.Empty;
+                        string tipoCel = worksheet2.Cells[row, 2].Text?.Trim() ?? string.Empty;
+                        string dataCel = worksheet2.Cells[row, 3].Text?.Trim() ?? string.Empty;
+                        string valorCel = worksheet2.Cells[row, 4].Text?.Trim() ?? string.Empty;
+
+                        if (string.IsNullOrEmpty(nomeCel) && string.IsNullOrEmpty(tipoCel) && string.IsNullOrEmpty(dataCel) && string.IsNullOrEmpty(valorCel))
+                        {
+                            continue;
+                        }
+
                         Registro registro = new Registro
                         {
-                            NumeroRegistro = worksheet2.Cells[row, 1].Text ,
-                            NomeRegistro = worksheet2.Cells[row, 2].Text ,
-                            DataRegistro = worksheet2.Cells[row, 3].Text ,
-                            ValorRegistro =  worksheet2.Cells[row, 4].Text
+                            NomeRegistro = nomeCel,
+                            TipoRegistro = tipoCel,
+                            DataRegistro = dataCel,
+                            ValorRegistro = valorCel
                         };
+
+
+
+                        //Registro registro = new Registro
+                        //{
+                        //    NomeRegistro = worksheet2.Cells[row, 1].Text,
+                        //    TipoRegistro = worksheet2.Cells[row, 2].Text,
+                        //    DataRegistro = worksheet2.Cells[row, 3].Text,
+                        //    ValorRegistro = worksheet2.Cells[row, 4].Text
+                        //};
 
                         Lista2.Add(registro);
                     }
 
                     for (int row = 2; row <= worksheet3.Dimension.End.Row; row++)
                     {
+                        string nomeCel = worksheet3.Cells[row, 1].Text?.Trim() ?? string.Empty;
+                        string tipoCel = worksheet3.Cells[row, 2].Text?.Trim() ?? string.Empty;
+                        string dataCel = worksheet3.Cells[row, 3].Text?.Trim() ?? string.Empty;
+                        string valorCel = worksheet3.Cells[row, 4].Text?.Trim() ?? string.Empty;
+
+                        if (string.IsNullOrEmpty(nomeCel) && string.IsNullOrEmpty(tipoCel) && string.IsNullOrEmpty(dataCel) && string.IsNullOrEmpty(valorCel))
+                        {
+                            continue;
+                        }
+
                         Registro registro = new Registro
                         {
-                            NumeroRegistro =  worksheet3.Cells[row, 1].Text,
-                            NomeRegistro =worksheet3.Cells[row, 2].Text ,
-                            DataRegistro =  worksheet3.Cells[row, 3].Text ,
-                            ValorRegistro =  worksheet3.Cells[row, 4].Text 
+                            NomeRegistro = nomeCel,
+                            TipoRegistro = tipoCel,
+                            DataRegistro = dataCel,
+                            ValorRegistro = valorCel
                         };
 
                         Lista3.Add(registro);
@@ -129,12 +153,6 @@ namespace ValidadorDuplicidade
                     string nome = worksheet.Name;
                     string nome2 = worksheet2.Name;
                     string nome3 = worksheet3.Name;
-
-
-                    var duplicadosDentroda2 = Lista2
-                        .Where(x => Lista2.Count(y => x.NumeroRegistro == y.NumeroRegistro) > 1)
-                        .Distinct()
-                        .ToList();
 
 
 
@@ -167,10 +185,6 @@ namespace ValidadorDuplicidade
                        
                         .ToList();
 
-
-
-
-
                     Dictionary<string, string> nomes = new()
                     {
                         { "nome1", nome },
@@ -194,13 +208,12 @@ namespace ValidadorDuplicidade
             }
             catch (Exception ex)
             {
-               MessageBox.Show(
-                    $"Erro ao abrir o arquivo: {ex.Message}",
+                MessageBox.Show(
+                    $"Erro inesperado: {ex.Message}",
                     "Erro",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
                 );
-
 
                 return (
                     new List<Registro>(),

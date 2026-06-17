@@ -7,9 +7,9 @@ namespace ValidadorDuplicidade
 {
     public class Registro
     {
-       public string NumeroRegistro;
+       public string NomeRegistro;
 
-        public string NomeRegistro;
+        public string TipoRegistro;
 
         public string ValorRegistro;
 
@@ -19,12 +19,12 @@ namespace ValidadorDuplicidade
 
         public override string ToString()
         {
-            return $"{NomeRegistro} - {ValorRegistro} - {DataRegistro}";
+            return $"{NomeRegistro} - {DataRegistro} - {ValorRegistro}";
         }
 
         public string[] RetornArray()
         {
-            return new string[] { NumeroRegistro, NomeRegistro, ValorRegistro, DataRegistro };
+            return new string[] { NomeRegistro, TipoRegistro, ValorRegistro, DataRegistro };
         }
 
     }
