@@ -1,11 +1,14 @@
+**xDuplicidade**
+*Descrição*
 
-O projeto xDuplicidade é uma aplicação desenvolvida para identificar e prevenir pagamentos duplicados a partir da análise de planilhas. Seu principal objetivo é garantir a integridade financeira dos dados, evitando que um mesmo pagamento seja processado mais de uma vez.
+O **xDuplicidade** é uma aplicação desktop desenvolvida em Windows Forms (.NET) com o objetivo de identificar e prevenir pagamentos duplicados a partir da análise de planilhas Excel. O sistema foi projetado para apoiar processos financeiros, reduzindo riscos de pagamentos repetidos e aumentando a confiabilidade dos dados processados.
 
-A ferramenta realiza a leitura de arquivos de planilha e executa uma validação baseada em critérios como nome do beneficiário e nome + valor, identificando possíveis registros repetidos. Dessa forma, o sistema consegue detectar duplicidades mesmo quando os dados não são exatamente idênticos em todas as colunas, mas representam a mesma transação.
+A aplicação realiza a importação de arquivos de planilha e executa validações baseadas em regras de negócio definidas pelo usuário, como duplicidade por nome e duplicidade por nome + valor. O processamento utiliza comparação de registros para identificar possíveis inconsistências, mesmo quando há variações parciais nos dados.
 
-Após a análise, o sistema retorna um relatório com os registros duplicados encontrados, permitindo ao usuário revisar e tomar decisões antes da efetivação de pagamentos.
+Após a análise, o sistema gera uma saída com os registros duplicados encontrados, permitindo revisão antes da execução de pagamentos.
+----------------------------------------------------------------------------------------------------------------------------------------
 
-Principais funcionalidades:
+**Principais funcionalidades:**
 
 Leitura de planilhas (Excel)
 Identificação de duplicidade por nome
@@ -14,5 +17,14 @@ Detecção de possíveis pagamentos repetidos
 Geração de relatório de inconsistências
 Apoio à validação e controle financeiro
 
-Objetivo do sistema:
-Evitar pagamentos duplicados, reduzindo erros operacionais e prejuízos financeiros causados por registros repetidos.
+---------------------------------------------------------------------------------------------------------------------------------------------
+**Tecnologias utilizadas:**
+
+*C# (.NET Framework / .NET) – desenvolvimento da aplicação desktop e regras de negócio
+*Windows Forms – interface gráfica da aplicação
+*LINQ – filtragem e comparação de dados
+*Windows Form
+
+--------------------------------------------------------------------------------------------------------------------------------------
+**Objetivo do sistema:**
+Garantir o controle e a integridade de pagamentos, prevenindo duplicidades que possam gerar prejuízos financeiros e erros operacionais.
