@@ -6,6 +6,7 @@ O **xDuplicidade** é uma aplicação desktop desenvolvida em Windows Forms (.NE
 A aplicação realiza a importação de arquivos de planilha e executa validações baseadas em regras de negócio definidas pelo usuário, como duplicidade por nome e duplicidade por nome + valor. O processamento utiliza comparação de registros para identificar possíveis inconsistências, mesmo quando há variações parciais nos dados.
 
 Após a análise, o sistema gera uma saída com os registros duplicados encontrados, permitindo revisão antes da execução de pagamentos.
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 **Principais funcionalidades:**
