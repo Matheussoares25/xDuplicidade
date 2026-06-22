@@ -112,8 +112,6 @@ namespace ValidadorDuplicidade
 
 
 
-
-
             try
             {
                 numeroDuplicados = 0;

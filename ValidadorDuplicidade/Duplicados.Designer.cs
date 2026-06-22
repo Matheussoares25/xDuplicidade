@@ -95,13 +95,12 @@
             infoIcon6 = new ReaLTaiizor.Controls.InfoIcon();
             headerLabel3 = new ReaLTaiizor.Controls.HeaderLabel();
             infoIcon2 = new ReaLTaiizor.Controls.InfoIcon();
-            Obss = new Panel();
             headerLabel7 = new ReaLTaiizor.Controls.HeaderLabel();
             panel10 = new Panel();
             PanelDicas = new Panel();
             NavBar = new Panel();
-            panel12 = new Panel();
-            panel8 = new Panel();
+            panel8 = new ReaLTaiizor.Controls.Panel();
+            panel1 = new ReaLTaiizor.Controls.Panel();
             BtnEscondeDicas = new ReaLTaiizor.Controls.RoyalButton();
             panel9 = new Panel();
             panel11 = new Panel();
@@ -117,10 +116,10 @@
             CentralTabelas.SuspendLayout();
             lostBorderPanel3.SuspendLayout();
             lostBorderPanel1.SuspendLayout();
-            Obss.SuspendLayout();
             PanelDicas.SuspendLayout();
             NavBar.SuspendLayout();
-            panel12.SuspendLayout();
+            panel8.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewTextBoxColumn1
@@ -282,7 +281,7 @@
             ResultadoLista1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             ResultadoLista1.ScrollBars = ScrollBars.None;
             ResultadoLista1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ResultadoLista1.Size = new Size(1708, 215);
+            ResultadoLista1.Size = new Size(1708, 221);
             ResultadoLista1.TabIndex = 9;
             ResultadoLista1.CellContentClick += ResultadoLista1_CellContentClick;
             // 
@@ -366,7 +365,7 @@
             TabelaResultado.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             TabelaResultado.ScrollBars = ScrollBars.None;
             TabelaResultado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            TabelaResultado.Size = new Size(1706, 204);
+            TabelaResultado.Size = new Size(1706, 210);
             TabelaResultado.TabIndex = 0;
             TabelaResultado.CellContentClick += TabelaResultado_CellClick;
             // 
@@ -450,7 +449,7 @@
             ResultadoLista2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             ResultadoLista2.ScrollBars = ScrollBars.None;
             ResultadoLista2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ResultadoLista2.Size = new Size(1708, 215);
+            ResultadoLista2.Size = new Size(1708, 221);
             ResultadoLista2.TabIndex = 10;
             ResultadoLista2.CellContentClick += ResultadoLista2_CellContentClick;
             // 
@@ -523,7 +522,7 @@
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(6, 7, 6, 7);
-            panel2.Size = new Size(1751, 272);
+            panel2.Size = new Size(1751, 278);
             panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel2.TabIndex = 12;
             panel2.Text = "panel2";
@@ -539,7 +538,7 @@
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(6, 7, 6, 7);
-            panel5.Size = new Size(1718, 218);
+            panel5.Size = new Size(1718, 224);
             panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel5.TabIndex = 17;
             panel5.Text = "panel5";
@@ -566,7 +565,7 @@
             panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
             panel6.Padding = new Padding(5);
-            panel6.Size = new Size(1718, 225);
+            panel6.Size = new Size(1718, 231);
             panel6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel6.TabIndex = 17;
             panel6.Text = "panel6";
@@ -580,11 +579,11 @@
             panel3.Controls.Add(DataUltimaSemana);
             panel3.Controls.Add(QtdTabela2);
             panel3.EdgeColor = Color.Silver;
-            panel3.Location = new Point(3, 284);
+            panel3.Location = new Point(3, 290);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Padding = new Padding(6, 7, 6, 7);
-            panel3.Size = new Size(1751, 272);
+            panel3.Size = new Size(1751, 278);
             panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel3.TabIndex = 13;
             panel3.Text = "panel3";
@@ -667,11 +666,11 @@
             panel4.Controls.Add(QtdTabela1);
             panel4.Controls.Add(panel7);
             panel4.EdgeColor = Color.Silver;
-            panel4.Location = new Point(3, 564);
+            panel4.Location = new Point(3, 576);
             panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(6, 7, 6, 7);
-            panel4.Size = new Size(1751, 272);
+            panel4.Size = new Size(1751, 278);
             panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel4.TabIndex = 14;
             panel4.Text = "panel4";
@@ -706,7 +705,7 @@
             panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
             panel7.Padding = new Padding(5);
-            panel7.Size = new Size(1718, 225);
+            panel7.Size = new Size(1718, 231);
             panel7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel7.TabIndex = 17;
             panel7.Text = "panel7";
@@ -720,7 +719,7 @@
             CentralTabelas.Controls.Add(panel3, 0, 1);
             CentralTabelas.Controls.Add(panel2, 0, 0);
             CentralTabelas.Dock = DockStyle.Fill;
-            CentralTabelas.Location = new Point(75, 194);
+            CentralTabelas.Location = new Point(75, 177);
             CentralTabelas.Margin = new Padding(3, 4, 3, 4);
             CentralTabelas.Name = "CentralTabelas";
             CentralTabelas.RowCount = 4;
@@ -728,17 +727,17 @@
             CentralTabelas.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             CentralTabelas.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             CentralTabelas.RowStyles.Add(new RowStyle());
-            CentralTabelas.Size = new Size(1757, 843);
+            CentralTabelas.Size = new Size(1757, 860);
             CentralTabelas.TabIndex = 15;
             // 
             // headerLabel1
             // 
-            headerLabel1.Anchor = AnchorStyles.Bottom;
+            headerLabel1.Anchor = AnchorStyles.Left;
             headerLabel1.AutoSize = true;
-            headerLabel1.BackColor = Color.Transparent;
+            headerLabel1.BackColor = Color.White;
             headerLabel1.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold);
             headerLabel1.ForeColor = Color.Black;
-            headerLabel1.Location = new Point(83, 8);
+            headerLabel1.Location = new Point(78, 4);
             headerLabel1.Name = "headerLabel1";
             headerLabel1.Size = new Size(207, 24);
             headerLabel1.TabIndex = 16;
@@ -748,9 +747,9 @@
             // DescUltima
             // 
             DescUltima.BackColor = Color.Transparent;
-            DescUltima.Font = new Font("Segoe UI Variable Display Semib", 9F, FontStyle.Bold);
+            DescUltima.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             DescUltima.ForeColor = Color.White;
-            DescUltima.Location = new Point(33, 46);
+            DescUltima.Location = new Point(32, 48);
             DescUltima.Name = "DescUltima";
             DescUltima.Size = new Size(378, 31);
             DescUltima.TabIndex = 23;
@@ -774,9 +773,9 @@
             // DescDuplicadosDuas
             // 
             DescDuplicadosDuas.BackColor = Color.Transparent;
-            DescDuplicadosDuas.Font = new Font("Segoe UI Variable Display Semib", 9F, FontStyle.Bold);
+            DescDuplicadosDuas.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             DescDuplicadosDuas.ForeColor = Color.White;
-            DescDuplicadosDuas.Location = new Point(33, 78);
+            DescDuplicadosDuas.Location = new Point(31, 80);
             DescDuplicadosDuas.Name = "DescDuplicadosDuas";
             DescDuplicadosDuas.Size = new Size(286, 23);
             DescDuplicadosDuas.TabIndex = 25;
@@ -800,9 +799,9 @@
             // DescPenultima
             // 
             DescPenultima.BackColor = Color.Transparent;
-            DescPenultima.Font = new Font("Segoe UI Variable Display Semib", 9F, FontStyle.Bold);
+            DescPenultima.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DescPenultima.ForeColor = Color.White;
-            DescPenultima.Location = new Point(33, 13);
+            DescPenultima.Location = new Point(32, 14);
             DescPenultima.Name = "DescPenultima";
             DescPenultima.Size = new Size(419, 31);
             DescPenultima.TabIndex = 27;
@@ -835,7 +834,7 @@
             lostBorderPanel3.Controls.Add(DescUltima);
             lostBorderPanel3.Font = new Font("Segoe UI", 12F);
             lostBorderPanel3.ForeColor = Color.White;
-            lostBorderPanel3.Location = new Point(18, 20);
+            lostBorderPanel3.Location = new Point(15, 16);
             lostBorderPanel3.Margin = new Padding(3, 4, 3, 4);
             lostBorderPanel3.Name = "lostBorderPanel3";
             lostBorderPanel3.Padding = new Padding(6, 7, 6, 7);
@@ -854,22 +853,22 @@
             lostBorderPanel1.Controls.Add(infoIcon2);
             lostBorderPanel1.Font = new Font("Segoe UI", 12F);
             lostBorderPanel1.ForeColor = Color.White;
-            lostBorderPanel1.Location = new Point(13, 11);
+            lostBorderPanel1.Location = new Point(14, 13);
             lostBorderPanel1.Margin = new Padding(3, 4, 3, 4);
             lostBorderPanel1.Name = "lostBorderPanel1";
             lostBorderPanel1.Padding = new Padding(6, 7, 6, 7);
             lostBorderPanel1.ShowText = true;
-            lostBorderPanel1.Size = new Size(875, 121);
+            lostBorderPanel1.Size = new Size(528, 121);
             lostBorderPanel1.TabIndex = 32;
             // 
             // headerLabel5
             // 
             headerLabel5.BackColor = Color.Transparent;
-            headerLabel5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            headerLabel5.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             headerLabel5.ForeColor = Color.White;
-            headerLabel5.Location = new Point(574, 21);
+            headerLabel5.Location = new Point(45, 71);
             headerLabel5.Name = "headerLabel5";
-            headerLabel5.Size = new Size(310, 61);
+            headerLabel5.Size = new Size(471, 61);
             headerLabel5.TabIndex = 31;
             headerLabel5.Text = "Registros repetidos na semana vigente ou em semanas anteriores.";
             // 
@@ -880,7 +879,7 @@
             infoIcon6.CircleColor = Color.White;
             infoIcon6.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
             infoIcon6.ForeColor = Color.White;
-            infoIcon6.Location = new Point(551, 24);
+            infoIcon6.Location = new Point(19, 71);
             infoIcon6.Margin = new Padding(3, 4, 3, 4);
             infoIcon6.Name = "infoIcon6";
             infoIcon6.Size = new Size(17, 23);
@@ -891,13 +890,13 @@
             // headerLabel3
             // 
             headerLabel3.BackColor = Color.Transparent;
-            headerLabel3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            headerLabel3.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             headerLabel3.ForeColor = Color.White;
             headerLabel3.Location = new Point(42, 23);
             headerLabel3.Name = "headerLabel3";
             headerLabel3.Size = new Size(508, 71);
             headerLabel3.TabIndex = 27;
-            headerLabel3.Text = "Registros que possuem apenas nome igual são automaticamente destacados quando selecionados na semana vigente.";
+            headerLabel3.Text = "Registros com o mesmo nome são destacados automaticamente na semana vigente";
             // 
             // infoIcon2
             // 
@@ -906,7 +905,7 @@
             infoIcon2.CircleColor = Color.Silver;
             infoIcon2.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
             infoIcon2.ForeColor = Color.Silver;
-            infoIcon2.Location = new Point(18, 27);
+            infoIcon2.Location = new Point(19, 27);
             infoIcon2.Margin = new Padding(3, 4, 3, 4);
             infoIcon2.Name = "infoIcon2";
             infoIcon2.Size = new Size(17, 23);
@@ -914,27 +913,14 @@
             infoIcon2.TabIndex = 18;
             infoIcon2.Text = "infoIcon2";
             // 
-            // Obss
-            // 
-            Obss.Anchor = AnchorStyles.Bottom;
-            Obss.AutoSize = true;
-            Obss.BackColor = Color.Transparent;
-            Obss.BorderStyle = BorderStyle.Fixed3D;
-            Obss.Controls.Add(lostBorderPanel1);
-            Obss.Location = new Point(636, 26);
-            Obss.Margin = new Padding(3, 4, 3, 4);
-            Obss.Name = "Obss";
-            Obss.Size = new Size(905, 146);
-            Obss.TabIndex = 33;
-            // 
             // headerLabel7
             // 
-            headerLabel7.Anchor = AnchorStyles.Bottom;
+            headerLabel7.Anchor = AnchorStyles.Left;
             headerLabel7.AutoSize = true;
-            headerLabel7.BackColor = Color.Transparent;
+            headerLabel7.BackColor = Color.White;
             headerLabel7.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Bold);
             headerLabel7.ForeColor = Color.Black;
-            headerLabel7.Location = new Point(657, 10);
+            headerLabel7.Location = new Point(602, 1);
             headerLabel7.Name = "headerLabel7";
             headerLabel7.Size = new Size(54, 24);
             headerLabel7.TabIndex = 34;
@@ -944,9 +930,9 @@
             // 
             panel10.BackColor = Color.DarkGray;
             panel10.Dock = DockStyle.Left;
-            panel10.Location = new Point(0, 194);
+            panel10.Location = new Point(0, 177);
             panel10.Name = "panel10";
-            panel10.Size = new Size(75, 843);
+            panel10.Size = new Size(75, 860);
             panel10.TabIndex = 36;
             // 
             // PanelDicas
@@ -959,58 +945,64 @@
             PanelDicas.Location = new Point(0, 0);
             PanelDicas.Margin = new Padding(1);
             PanelDicas.Name = "PanelDicas";
-            PanelDicas.Size = new Size(1907, 194);
+            PanelDicas.Size = new Size(1907, 177);
             PanelDicas.TabIndex = 38;
             // 
             // NavBar
             // 
-            NavBar.Anchor = AnchorStyles.Bottom;
-            NavBar.BackColor = Color.Transparent;
+            NavBar.BackColor = SystemColors.ControlDarkDark;
             NavBar.Controls.Add(headerLabel7);
-            NavBar.Controls.Add(headerLabel1);
-            NavBar.Controls.Add(panel12);
-            NavBar.Controls.Add(Obss);
             NavBar.Controls.Add(panel8);
-            NavBar.Location = new Point(27, -1);
+            NavBar.Controls.Add(headerLabel1);
+            NavBar.Controls.Add(panel1);
+            NavBar.Dock = DockStyle.Fill;
+            NavBar.Location = new Point(0, 0);
             NavBar.Name = "NavBar";
-            NavBar.Size = new Size(1817, 183);
-            NavBar.TabIndex = 40;
-            // 
-            // panel12
-            // 
-            panel12.BorderStyle = BorderStyle.Fixed3D;
-            panel12.Controls.Add(lostBorderPanel3);
-            panel12.Location = new Point(50, 25);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(491, 150);
-            panel12.TabIndex = 0;
+            NavBar.Size = new Size(1870, 173);
+            NavBar.TabIndex = 37;
             // 
             // panel8
             // 
-            panel8.Anchor = AnchorStyles.Bottom;
-            panel8.BackColor = Color.Black;
-            panel8.Location = new Point(593, 16);
-            panel8.Margin = new Padding(1);
+            panel8.BackColor = Color.FromArgb(39, 51, 63);
+            panel8.Controls.Add(lostBorderPanel1);
+            panel8.EdgeColor = SystemColors.ControlDarkDark;
+            panel8.Location = new Point(569, 18);
             panel8.Name = "panel8";
-            panel8.Size = new Size(1, 150);
-            panel8.TabIndex = 37;
+            panel8.Padding = new Padding(5);
+            panel8.Size = new Size(556, 146);
+            panel8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            panel8.TabIndex = 39;
+            panel8.Text = "panel8";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(39, 51, 63);
+            panel1.Controls.Add(lostBorderPanel3);
+            panel1.EdgeColor = SystemColors.ControlDarkDark;
+            panel1.Location = new Point(46, 18);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(5);
+            panel1.Size = new Size(481, 146);
+            panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            panel1.TabIndex = 38;
+            panel1.Text = "panel1";
             // 
             // BtnEscondeDicas
             // 
-            BtnEscondeDicas.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            BtnEscondeDicas.BackColor = SystemColors.ControlLight;
+            BtnEscondeDicas.BackColor = Color.White;
             BtnEscondeDicas.BorderColor = Color.FromArgb(180, 180, 180);
             BtnEscondeDicas.BorderThickness = 3;
+            BtnEscondeDicas.Dock = DockStyle.Right;
             BtnEscondeDicas.DrawBorder = true;
-            BtnEscondeDicas.ForeColor = Color.FromArgb(31, 31, 31);
-            BtnEscondeDicas.HotTrackColor = Color.FromArgb(221, 221, 221);
+            BtnEscondeDicas.ForeColor = Color.Blue;
+            BtnEscondeDicas.HotTrackColor = Color.White;
             BtnEscondeDicas.Image = null;
             BtnEscondeDicas.LayoutFlags = ReaLTaiizor.Util.RoyalLayoutFlags.ImageBeforeText;
-            BtnEscondeDicas.Location = new Point(1850, 154);
+            BtnEscondeDicas.Location = new Point(1870, 0);
             BtnEscondeDicas.Name = "BtnEscondeDicas";
             BtnEscondeDicas.PressedColor = Color.FromArgb(64, 64, 64);
             BtnEscondeDicas.PressedForeColor = Color.White;
-            BtnEscondeDicas.Size = new Size(33, 28);
+            BtnEscondeDicas.Size = new Size(33, 173);
             BtnEscondeDicas.TabIndex = 36;
             BtnEscondeDicas.Text = "˄";
             BtnEscondeDicas.Click += royalButton1_Click;
@@ -1027,9 +1019,9 @@
             // 
             panel11.BackColor = Color.DarkGray;
             panel11.Dock = DockStyle.Right;
-            panel11.Location = new Point(1832, 194);
+            panel11.Location = new Point(1832, 177);
             panel11.Name = "panel11";
-            panel11.Size = new Size(75, 853);
+            panel11.Size = new Size(75, 870);
             panel11.TabIndex = 40;
             // 
             // Duplicados
@@ -1067,11 +1059,11 @@
             CentralTabelas.ResumeLayout(false);
             lostBorderPanel3.ResumeLayout(false);
             lostBorderPanel1.ResumeLayout(false);
-            Obss.ResumeLayout(false);
             PanelDicas.ResumeLayout(false);
             NavBar.ResumeLayout(false);
             NavBar.PerformLayout();
-            panel12.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -1119,7 +1111,6 @@
         private ReaLTaiizor.Controls.LostBorderPanel lostBorderPanel1;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel3;
         private ReaLTaiizor.Controls.InfoIcon infoIcon2;
-        private Panel Obss;
         private ReaLTaiizor.Controls.HeaderLabel headerLabel7;
         private DataGridViewTextBoxColumn Nome;
         private DataGridViewTextBoxColumn Tipo;
@@ -1138,12 +1129,12 @@
         private Panel panel10;
         private Panel PanelDicas;
         private ReaLTaiizor.Controls.RoyalButton BtnEscondeDicas;
-        private Panel panel8;
         private Panel NavBar;
-        private Panel panel12;
         private ReaLTaiizor.Controls.RoyalButton BtnExpandirUltimaSemana;
         private ReaLTaiizor.Controls.RoyalButton BtnExpandirPenultimaSemana;
         private Panel panel9;
         private Panel panel11;
+        private ReaLTaiizor.Controls.Panel panel1;
+        private ReaLTaiizor.Controls.Panel panel8;
     }
 }

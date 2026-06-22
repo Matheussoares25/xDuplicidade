@@ -15,8 +15,5 @@ namespace ValidadorDuplicidade
 
         public bool Valor = false;
 
-
-
-
     }
 }
