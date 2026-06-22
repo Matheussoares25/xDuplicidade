@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 
 
@@ -32,6 +33,7 @@ namespace ValidadorDuplicidade
         bool penultimaSemanaExpand = false;
 
 
+        private DataGridViewRow linhaResultado;
 
 
 
@@ -71,8 +73,11 @@ namespace ValidadorDuplicidade
             ResultadoLista2.ClearSelection();
 
 
+
             init();
             Colorir();
+            CentralTabelas.RowStyles[1].Height = 7;
+            CentralTabelas.RowStyles[2].Height = 7;
 
             this.FormBorderStyle = FormBorderStyle.Sizable;
 
@@ -80,12 +85,6 @@ namespace ValidadorDuplicidade
 
         private void FiltroValor_CheckedChanged(object sender, EventArgs e)
         {
-
-            //Os contadores marcam a quantidade de registro dentro das tabelas;
-            //São zerados quando o filtro é aplicado para recomeçar a contagem;
-
-
-
         }
 
         private void Colorir()
@@ -178,40 +177,6 @@ namespace ValidadorDuplicidade
 
 
         }
-
-            //foreach (DataGridViewRow row in TabelaResultado.Rows)
-            //{
-            //    string nome = row.Cells[CelulaNome].Value?.ToString();
-
-            //    bool existeNaLista1 = true;
-            //    bool existeNaLista2 = true;
-
-
-            //    foreach (DataGridViewRow rowL1 in ResultadoLista1.Rows)
-            //    {
-            //        if (rowL1.Cells[CelulaNome].Value?.ToString() == nome)
-            //        {
-            //            existeNaLista1 = false;
-            //            break;
-            //        }
-            //    }
-
-
-            //    foreach (DataGridViewRow rowL2 in ResultadoLista2.Rows)
-            //    {
-            //        if (rowL2.Cells[CelulaNome].Value?.ToString() == nome)
-            //        {
-            //            existeNaLista2 = false;
-            //            break;
-            //        }
-            //    }
-
-            //    if (existeNaLista1 && existeNaLista2)
-            //    {
-            //        row.DefaultCellStyle.BackColor = Color.SlateGray;
-            //        row.DefaultCellStyle.ForeColor = Color.White;
-            //    }
-            //}
         
         public void init()
         {
@@ -299,149 +264,129 @@ namespace ValidadorDuplicidade
 
 
 
-        private async void TabelaResultado_CellClick(object sender, EventArgs e)
+        private async void TabelaResultado_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (TabelaResultado.CurrentRow == null) return;
-
+            penultimaSemanaExpand = false;
+            ultimasemanaExpand = false;
+            redimencionar(btn1: true, btn2: true);
             string Nome = TabelaResultado.CurrentRow.Cells[CelulaNome].Value?.ToString();
             string Valor = TabelaResultado.CurrentRow.Cells[CelulaValor].Value?.ToString();
-
             bool existeNaPenultima = false;
             bool existeNaUltima = false;
-
-            //foreach (DataGridViewRow r in ResultadoLista1.Rows)
-            //    r.DefaultCellStyle.BackColor = Color.Empty;
-
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            linhaResultado = TabelaResultado.Rows[e.RowIndex];
+            DataGridViewRow linhaPenultima = null;
+            DataGridViewRow linhaUltima = null;
             ResultadoLista1.ClearSelection();
             ResultadoLista2.ClearSelection();
-
-
-            //a lista1 é a amarela que representa a penultima semana;
-            foreach (DataGridViewRow row in ResultadoLista1.Rows)
+            foreach (DataGridViewRow row in (IEnumerable)ResultadoLista1.Rows)
             {
                 bool nomeIgual = row.Cells[CelulaNome].Value?.ToString() == Nome;
                 bool valorIgual = row.Cells[CelulaValor].Value?.ToString() == Valor;
-
                 if (nomeIgual && valorIgual)
                 {
-
                     row.Selected = true;
                     row.DefaultCellStyle.BackColor = Color.Yellow;
                     row.DefaultCellStyle.SelectionBackColor = Color.Yellow;
-                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
                     ResultadoLista1.CurrentCell = row.Cells[0];
+                    linhaPenultima = row;
                     existeNaPenultima = true;
-
                     break;
                 }
-
                 if (nomeIgual)
                 {
                     row.Selected = true;
+                    ResultadoLista1.CurrentCell = row.Cells[0];
                     row.DefaultCellStyle.BackColor = Color.Silver;
                     row.DefaultCellStyle.SelectionBackColor = Color.Silver;
-                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular);
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
                     row.DefaultCellStyle.ForeColor = Color.Black;
-                    ResultadoLista1.CurrentCell = row.Cells[0];
+                    linhaPenultima = row;
                     existeNaPenultima = true;
-
-                    
                 }
-
                 else
                 {
                     row.DefaultCellStyle.BackColor = Color.White;
                     row.DefaultCellStyle.SelectionBackColor = Color.Yellow;
-                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular);
+                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
                     row.DefaultCellStyle.ForeColor = Color.Black;
                 }
-
             }
-
-
-
-            foreach (DataGridViewRow row in ResultadoLista2.Rows)
+            foreach (DataGridViewRow row2 in (IEnumerable)ResultadoLista2.Rows)
             {
-                bool nomeIgual = row.Cells[CelulaNome].Value?.ToString() == Nome;
-                bool valorIgual = row.Cells[CelulaValor].Value?.ToString() == Valor;
-
-                if (nomeIgual && valorIgual)
+                bool nomeIgual2 = row2.Cells[CelulaNome].Value?.ToString() == Nome;
+                bool valorIgual2 = row2.Cells[CelulaValor].Value?.ToString() == Valor;
+                if (nomeIgual2 && valorIgual2)
                 {
-                    row.Selected = true;
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                    row.DefaultCellStyle.SelectionBackColor = Color.Red;
-                    row.DefaultCellStyle.ForeColor = Color.White;
-                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-                    ResultadoLista2.CurrentCell = row.Cells[0];
+                    row2.Selected = true;
+                    row2.DefaultCellStyle.BackColor = Color.Red;
+                    row2.DefaultCellStyle.SelectionBackColor = Color.Red;
+                    row2.DefaultCellStyle.ForeColor = Color.White;
+                    row2.DefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Bold);
+                    ResultadoLista2.CurrentCell = row2.Cells[0];
+                    linhaUltima = row2;
                     existeNaUltima = true;
-
-                   
                     break;
                 }
-
-                if (nomeIgual)
+                if (nomeIgual2)
                 {
-                    row.Selected = true;
-                    row.DefaultCellStyle.BackColor = Color.Silver;
-                    row.DefaultCellStyle.SelectionBackColor = Color.Silver;
-                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular);
-                    row.DefaultCellStyle.ForeColor = Color.Black;
-                    ResultadoLista2.CurrentCell = row.Cells[0];
+                    row2.Selected = true;
+                    ResultadoLista2.CurrentCell = row2.Cells[0];
+                    row2.DefaultCellStyle.BackColor = Color.Silver;
+                    row2.DefaultCellStyle.SelectionBackColor = Color.Silver;
+                    row2.DefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+                    row2.DefaultCellStyle.ForeColor = Color.Black;
+                    linhaUltima = row2;
                     existeNaUltima = true;
-
-
                 }
                 else
                 {
-                    row.DefaultCellStyle.BackColor = Color.White;
-                    row.DefaultCellStyle.SelectionBackColor = Color.Red;
-                    row.DefaultCellStyle.Font = new Font("Segoe UI", 9, FontStyle.Regular);
-                    row.DefaultCellStyle.ForeColor = Color.Black;
+                    row2.DefaultCellStyle.BackColor = Color.White;
+                    row2.DefaultCellStyle.SelectionBackColor = Color.Red;
+                    row2.DefaultCellStyle.Font = new Font("Segoe UI", 9f, FontStyle.Regular);
+                    row2.DefaultCellStyle.ForeColor = Color.Black;
                 }
             }
-
-
-            if ((existeNaPenultima || existeNaUltima) && (penultimaSemanaExpand || ultimasemanaExpand))
+            if ((existeNaPenultima || existeNaUltima) && (!penultimaSemanaExpand || !ultimasemanaExpand) && MessageBox.Show("O registro selecionado possui repetição em uma ou mais planilhas anteriores. Para facilitar a visualização desses registros repetidos,Deseja expandir as tabelas nas quais esse registro tambem existe?.", "Item Encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
-
-                
-              var openregistro =  MessageBox.Show(
-                    "O registro selecionado possui repetição em uma ou mais planilhas anteriores. Para facilitar a visualização desses registros repetidos,Deseja espandir as tabelas nas quais esse registro tambem existe?.",
-                    "Item Encontrado",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning);
-
-
-                if(openregistro == DialogResult.Yes)
+                if (existeNaPenultima)
                 {
-
-                    if (existeNaPenultima)
+                    penultimaSemanaExpand = true;
+                    CentralTabelas.RowStyles[2].Height = 50f;
+                    if (linhaPenultima != null)
                     {
-                        penultimaSemanaExpand = false;
-                        CentralTabelas.RowStyles[2].Height = 50;
-
-                       
-                        BtnExpandirPenultimaSemana.Text = "˅";
+                        ResultadoLista1.CurrentCell = linhaPenultima.Cells[0];
+                        ResultadoLista1.FirstDisplayedScrollingRowIndex = linhaPenultima.Index;
                     }
-
-                    if (existeNaUltima)
-                    {
-                        
-                        CentralTabelas.RowStyles[1].Height = 50;
-
-                        ultimasemanaExpand = false;
-                        BtnExpandirUltimaSemana.Text = "˅";
-                    }
-
+                    BtnExpandirPenultimaSemana.Text = "\u02c5";
                 }
+                if (existeNaUltima)
+                {
+                    CentralTabelas.RowStyles[1].Height = 50f;
+                    if (linhaUltima != null)
+                    {
+                        ResultadoLista2.CurrentCell = linhaUltima.Cells[0];
+                        ResultadoLista2.FirstDisplayedScrollingRowIndex = linhaUltima.Index;
+                    }
+                    ultimasemanaExpand = true;
+                    BtnExpandirUltimaSemana.Text = "\u02c5";
+                }
+                if (linhaResultado != null)
+                {
+                    linhaResultado.Selected = true;
+                    TabelaResultado.CurrentCell = linhaResultado.Cells[0];
+                    TabelaResultado.FirstDisplayedScrollingRowIndex = linhaResultado.Index;
+                    TabelaResultado.Focus();
+                }
+
             }
-            if(!existeNaUltima && !existeNaPenultima)
+            if (!existeNaUltima && !existeNaPenultima)
             {
-                MessageBox.Show(
-                    "O item selecionado não foi encontrado nas semanas anteriores. O registro só teve repetição na semana vigente",
-                    "Registro repetido só na semana vigente",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show("O item selecionado não foi encontrado nas semanas anteriores. O registro só teve repetição na semana vigente", "Registro repetido só na semana vigente", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
 
@@ -482,19 +427,26 @@ namespace ValidadorDuplicidade
 
         private void FiltroValor_CheckedChanged_1(object sender, EventArgs e)
         {
-            //Filtro de Valor
-            //f.Valor = FiltroValor.Checked;
-            //contador = 0;
-            //contador1 = 0;
-            //contador2 = 0;
 
-            //init();
-            //Colorir();
         }
 
         private void ZoomP1_Click(object sender, EventArgs e)
         {
 
+        }
+        private void redimencionar(bool btn1, bool btn2)
+        {
+            if (btn1)
+            {
+                CentralTabelas.RowStyles[1].Height = (ultimasemanaExpand ? 50 : 7);
+                BtnExpandirUltimaSemana.Text = (ultimasemanaExpand ? "\u02c5" : "\u02c4");
+            }
+            if (btn2)
+            {
+                CentralTabelas.RowStyles[2].Height = (penultimaSemanaExpand ? 50 : 7);
+                BtnExpandirPenultimaSemana.Text = (penultimaSemanaExpand ? "\u02c5" : "\u02c4");
+            }
+            ordenarTamanhos();
         }
 
 
@@ -503,33 +455,36 @@ namespace ValidadorDuplicidade
         {
             if (ultimasemanaExpand)
             {
-
-                if (CentralTabelas.RowStyles[1].Height > 5)
+                if (CentralTabelas.RowStyles[1].Height < 50f)
                 {
-                    CentralTabelas.RowStyles[1].Height = 5;
+                    CentralTabelas.RowStyles[1].Height = 50f;
                 }
             }
-
-            if (penultimaSemanaExpand) { 
-
-                if(CentralTabelas.RowStyles[2].Height > 5)
-                {
-                    CentralTabelas.RowStyles[2].Height = 5;
-                }
-            }
-
-            if (CentralTabelas.RowStyles[0].Height < 50)
+            else if (CentralTabelas.RowStyles[1].Height > 6f)
             {
-                CentralTabelas.RowStyles[0].Height = 50;
+                CentralTabelas.RowStyles[1].Height = 6f;
+            }
+            if (penultimaSemanaExpand)
+            {
+                if (CentralTabelas.RowStyles[2].Height < 50f)
+                {
+                    CentralTabelas.RowStyles[2].Height = 50f;
+                }
+            }
+            else if (CentralTabelas.RowStyles[2].Height > 6f)
+            {
+                CentralTabelas.RowStyles[2].Height = 6f;
+            }
+            if (CentralTabelas.RowStyles[0].Height < 50f)
+            {
+                CentralTabelas.RowStyles[0].Height = 50f;
             }
         }
 
         private void royalButton1_Click(object sender, EventArgs e)
         {
             PanelAtivo = !PanelAtivo;
-
-            PanelDicas.Height = PanelAtivo ? 210 : 37;
-
+            PanelDicas.Height = (PanelAtivo ? 176 : 37);
             BtnEscondeDicas.Text = PanelAtivo ? "˄" : "˅";
             NavBar.Visible = PanelAtivo;
            
@@ -541,17 +496,8 @@ namespace ValidadorDuplicidade
         private void royalButton1_Click_1(object sender, EventArgs e)
         {
 
-           
-
-            CentralTabelas.RowStyles[1].Height = ultimasemanaExpand? 50 : 7;
-
-
             ultimasemanaExpand = !ultimasemanaExpand;
-
-
-            BtnExpandirUltimaSemana.Text = ultimasemanaExpand? "˄" : "˅";
-
-            ordenarTamanhos();
+            redimencionar(btn1: true, btn2: false);
         }
 
         private void panel2_Click(object sender, EventArgs e)
@@ -562,15 +508,10 @@ namespace ValidadorDuplicidade
         private void royalButton2_Click(object sender, EventArgs e)
         {
 
-
-            CentralTabelas.RowStyles[2].Height = penultimaSemanaExpand? 50 : 7;
-
             penultimaSemanaExpand = !penultimaSemanaExpand;
-
-            BtnExpandirPenultimaSemana.Text = penultimaSemanaExpand ? "˄" : "˅";
-
-            ordenarTamanhos();
+            redimencionar(btn1: false, btn2: true);
         }
+
     }
 
 
