@@ -491,5 +491,12 @@ namespace ValidadorDuplicidade
         {
 
         }
+
+        private void parrotButton2_Click(object sender, EventArgs e)
+        {
+            Config f = new Config();
+
+            f.ShowDialog();
+        }
     }
 }

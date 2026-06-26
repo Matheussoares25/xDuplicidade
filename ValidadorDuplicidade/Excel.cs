@@ -20,7 +20,6 @@ namespace ValidadorDuplicidade
                 Valor = false;
             }
 
-         
 
             try
             {
@@ -45,6 +44,7 @@ namespace ValidadorDuplicidade
                         
                     }
 
+
                     ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                     ExcelWorksheet worksheet2 = package.Workbook.Worksheets[1];
                     ExcelWorksheet worksheet3 = package.Workbook.Worksheets[2];
@@ -57,6 +57,8 @@ namespace ValidadorDuplicidade
                     }
 
 
+
+                    //momento que define qual celula tem nome e valor;
                     for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
                     {
                         string nomeCel = worksheet.Cells[row, 1].Text?.Trim() ?? string.Empty;
@@ -78,17 +80,6 @@ namespace ValidadorDuplicidade
                             DataRegistro = dataCel,
                             ValorRegistro = valorCel
                         };
-
-                        //Tras todos registros inclusive os que estao em branco;
-                        //Registro registro = new Registro()
-                        //{
-                        //    NomeRegistro = worksheet.Cells[row, 1].Text,
-                        //    TipoRegistro = worksheet.Cells[row, 2].Text,
-                        //    DataRegistro = worksheet.Cells[row, 3].Text,
-                        //    ValorRegistro = worksheet.Cells[row, 4].Text
-
-                        //};
-
 
 
                         Lista1.Add(registro);
@@ -114,15 +105,6 @@ namespace ValidadorDuplicidade
                             ValorRegistro = valorCel
                         };
 
-
-
-                        //Registro registro = new Registro
-                        //{
-                        //    NomeRegistro = worksheet2.Cells[row, 1].Text,
-                        //    TipoRegistro = worksheet2.Cells[row, 2].Text,
-                        //    DataRegistro = worksheet2.Cells[row, 3].Text,
-                        //    ValorRegistro = worksheet2.Cells[row, 4].Text
-                        //};
 
                         Lista2.Add(registro);
                     }

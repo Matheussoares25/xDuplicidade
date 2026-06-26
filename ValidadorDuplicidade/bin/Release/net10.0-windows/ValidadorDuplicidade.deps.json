@@ -11,7 +11,8 @@
           "EPPlus": "8.5.4",
           "MaterialSkin.2": "2.3.1",
           "Ookii.Dialogs.WinForms": "4.0.0",
-          "ReaLTaiizor": "3.8.1.8"
+          "ReaLTaiizor": "3.8.1.8",
+          "RibbonWinForms": "5.0.1.1"
         },
         "runtime": {
           "ValidadorDuplicidade.dll": {}
@@ -161,6 +162,14 @@
             "fileVersion": "3.8.1.8"
           }
         }
+      },
+      "RibbonWinForms/5.0.1.1": {
+        "runtime": {
+          "lib/net461/System.Windows.Forms.Ribbon.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "5.0.1.0"
+          }
+        }
       }
     }
   },
@@ -267,6 +276,13 @@
       "sha512": "sha512-BXegoNe8hNOlTbLGegwp/cLO2z/EIjfluhWIw4d0axdt1B5Q36zfyxfwTF/7Qd8X563UzTttrr6ZzTAMWvIRQg==",
       "path": "realtaiizor/3.8.1.8",
       "hashPath": "realtaiizor.3.8.1.8.nupkg.sha512"
+    },
+    "RibbonWinForms/5.0.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3JeS/WehB/5HFsG5xIhk+VoenWnSXEGFnsq5t14usuaj7eqfl3/hEnlAgdmavifJSS2qeepXMw2Zd716USjrUA==",
+      "path": "ribbonwinforms/5.0.1.1",
+      "hashPath": "ribbonwinforms.5.0.1.1.nupkg.sha512"
     }
   }
 }

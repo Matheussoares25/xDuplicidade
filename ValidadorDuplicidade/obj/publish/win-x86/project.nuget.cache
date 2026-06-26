@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/H/qkpVtdKI=",
+  "dgSpecHash": "R+44JmR2aXs=",
   "success": true,
   "projectFilePath": "C:\\Users\\ti2\\source\\repos\\ValidadorDuplicidade\\ValidadorDuplicidade\\ValidadorDuplicidade.csproj",
   "expectedPackageFiles": [
@@ -16,13 +16,27 @@
     "C:\\Users\\ti2\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\10.0.7\\microsoft.extensions.filesystemglobbing.10.0.7.nupkg.sha512",
     "C:\\Users\\ti2\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.7\\microsoft.extensions.primitives.10.0.7.nupkg.sha512",
     "C:\\Users\\ti2\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
-    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.8\\microsoft.net.illink.tasks.10.0.8.nupkg.sha512",
+    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.net.illink.tasks\\10.0.9\\microsoft.net.illink.tasks.10.0.9.nupkg.sha512",
     "C:\\Users\\ti2\\.nuget\\packages\\ookii.dialogs.winforms\\4.0.0\\ookii.dialogs.winforms.4.0.0.nupkg.sha512",
     "C:\\Users\\ti2\\.nuget\\packages\\realtaiizor\\3.8.1.8\\realtaiizor.3.8.1.8.nupkg.sha512",
+    "C:\\Users\\ti2\\.nuget\\packages\\ribbonwinforms\\5.0.1.1\\ribbonwinforms.5.0.1.1.nupkg.sha512",
     "C:\\Users\\ti2\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
-    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\10.0.8\\microsoft.netcore.app.runtime.win-x86.10.0.8.nupkg.sha512",
-    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\10.0.8\\microsoft.windowsdesktop.app.runtime.win-x86.10.0.8.nupkg.sha512",
-    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\10.0.8\\microsoft.aspnetcore.app.runtime.win-x86.10.0.8.nupkg.sha512"
+    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\10.0.9\\microsoft.netcore.app.runtime.win-x86.10.0.9.nupkg.sha512",
+    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\10.0.9\\microsoft.windowsdesktop.app.runtime.win-x86.10.0.9.nupkg.sha512",
+    "C:\\Users\\ti2\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\10.0.9\\microsoft.aspnetcore.app.runtime.win-x86.10.0.9.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "O pacote 'RibbonWinForms 5.0.1.1' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0-windows7.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "projectPath": "C:\\Users\\ti2\\source\\repos\\ValidadorDuplicidade\\ValidadorDuplicidade\\ValidadorDuplicidade.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\ti2\\source\\repos\\ValidadorDuplicidade\\ValidadorDuplicidade\\ValidadorDuplicidade.csproj",
+      "libraryId": "RibbonWinForms",
+      "targetGraphs": [
+        "net10.0-windows"
+      ]
+    }
+  ]
 }

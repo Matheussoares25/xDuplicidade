@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             caminhoSelecionado = new ReaLTaiizor.Controls.HopeTextBox();
             panel3 = new ReaLTaiizor.Controls.Panel();
+            parrotButton2 = new ReaLTaiizor.Controls.ParrotButton();
             parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
             btn = new ReaLTaiizor.Controls.ParrotButton();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -86,7 +87,8 @@
             caminhoSelecionado.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             caminhoSelecionado.ForeColor = Color.DarkGray;
             caminhoSelecionado.Hint = "";
-            caminhoSelecionado.Location = new Point(285, 26);
+            caminhoSelecionado.Location = new Point(249, 20);
+            caminhoSelecionado.Margin = new Padding(3, 2, 3, 2);
             caminhoSelecionado.MaxLength = 32767;
             caminhoSelecionado.Multiline = false;
             caminhoSelecionado.Name = "caminhoSelecionado";
@@ -95,7 +97,7 @@
             caminhoSelecionado.SelectedText = "";
             caminhoSelecionado.SelectionLength = 0;
             caminhoSelecionado.SelectionStart = 0;
-            caminhoSelecionado.Size = new Size(1307, 47);
+            caminhoSelecionado.Size = new Size(1143, 41);
             caminhoSelecionado.TabIndex = 23;
             caminhoSelecionado.TabStop = false;
             caminhoSelecionado.UseSystemPasswordChar = false;
@@ -103,19 +105,47 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(64, 64, 64);
+            panel3.Controls.Add(parrotButton2);
             panel3.Controls.Add(parrotButton1);
             panel3.Controls.Add(btn);
             panel3.Controls.Add(caminhoSelecionado);
             panel3.Dock = DockStyle.Top;
             panel3.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel3.Location = new Point(3, 3);
+            panel3.Location = new Point(3, 2);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Padding = new Padding(5);
-            panel3.Size = new Size(1816, 98);
+            panel3.Padding = new Padding(4);
+            panel3.Size = new Size(1588, 74);
             panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel3.TabIndex = 26;
             panel3.Text = "panel3";
             panel3.Click += panel3_Click;
+            // 
+            // parrotButton2
+            // 
+            parrotButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            parrotButton2.BackgroundColor = Color.FromArgb(83, 145, 204);
+            parrotButton2.BackgroundImage = Properties.Resources.config;
+            parrotButton2.ButtonImage = Properties.Resources.config;
+            parrotButton2.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
+            parrotButton2.ButtonText = "";
+            parrotButton2.ClickBackColor = Color.Silver;
+            parrotButton2.ClickTextColor = Color.White;
+            parrotButton2.CornerRadius = 5;
+            parrotButton2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            parrotButton2.Horizontal_Alignment = StringAlignment.Center;
+            parrotButton2.HoverBackgroundColor = Color.FromArgb(225, 225, 225);
+            parrotButton2.HoverTextColor = Color.Black;
+            parrotButton2.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Center;
+            parrotButton2.Location = new Point(9, 20);
+            parrotButton2.Name = "parrotButton2";
+            parrotButton2.Size = new Size(42, 35);
+            parrotButton2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            parrotButton2.TabIndex = 39;
+            parrotButton2.TextColor = Color.White;
+            parrotButton2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            parrotButton2.Vertical_Alignment = StringAlignment.Center;
+            parrotButton2.Click += parrotButton2_Click;
             // 
             // parrotButton1
             // 
@@ -132,10 +162,9 @@
             parrotButton1.HoverBackgroundColor = Color.FromArgb(225, 225, 225);
             parrotButton1.HoverTextColor = Color.Black;
             parrotButton1.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            parrotButton1.Location = new Point(1599, 26);
-            parrotButton1.Margin = new Padding(3, 4, 3, 4);
+            parrotButton1.Location = new Point(1398, 20);
             parrotButton1.Name = "parrotButton1";
-            parrotButton1.Size = new Size(197, 47);
+            parrotButton1.Size = new Size(159, 35);
             parrotButton1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             parrotButton1.TabIndex = 38;
             parrotButton1.TextColor = Color.White;
@@ -157,10 +186,9 @@
             btn.HoverBackgroundColor = Color.FromArgb(225, 225, 225);
             btn.HoverTextColor = Color.Black;
             btn.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btn.Location = new Point(26, 26);
-            btn.Margin = new Padding(3, 4, 3, 4);
+            btn.Location = new Point(57, 20);
             btn.Name = "btn";
-            btn.Size = new Size(239, 47);
+            btn.Size = new Size(175, 35);
             btn.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btn.TabIndex = 37;
             btn.TextColor = Color.White;
@@ -175,11 +203,12 @@
             tableLayoutPanel2.Controls.Add(panel3, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
             tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 104F));
-            tableLayoutPanel2.Size = new Size(1822, 104);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 78F));
+            tableLayoutPanel2.Size = new Size(1594, 78);
             tableLayoutPanel2.TabIndex = 33;
             // 
             // pictureBox4
@@ -188,10 +217,9 @@
             pictureBox4.BackColor = Color.Silver;
             pictureBox4.BackgroundImage = Properties.Resources.logo_GLPI_250_black;
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Location = new Point(623, 108);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Location = new Point(545, 81);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(577, 119);
+            pictureBox4.Size = new Size(505, 89);
             pictureBox4.TabIndex = 34;
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
@@ -204,11 +232,11 @@
             panel7.Controls.Add(panel8);
             panel7.Dock = DockStyle.Fill;
             panel7.EdgeColor = Color.Silver;
-            panel7.Location = new Point(1177, 13);
-            panel7.Margin = new Padding(5);
+            panel7.Location = new Point(1029, 10);
+            panel7.Margin = new Padding(4);
             panel7.Name = "panel7";
-            panel7.Padding = new Padding(5);
-            panel7.Size = new Size(577, 597);
+            panel7.Padding = new Padding(4);
+            panel7.Size = new Size(506, 447);
             panel7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel7.TabIndex = 29;
             panel7.Text = "panel7";
@@ -219,9 +247,9 @@
             QtdPl3.AutoSize = true;
             QtdPl3.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdPl3.ForeColor = Color.White;
-            QtdPl3.Location = new Point(484, 13);
+            QtdPl3.Location = new Point(424, 10);
             QtdPl3.Name = "QtdPl3";
-            QtdPl3.Size = new Size(75, 14);
+            QtdPl3.Size = new Size(55, 12);
             QtdPl3.TabIndex = 40;
             QtdPl3.Text = "skyLabel1";
             // 
@@ -235,10 +263,11 @@
             panel8.Controls.Add(Planilha3);
             panel8.Controls.Add(Nome3);
             panel8.EdgeColor = Color.FromArgb(39, 51, 63);
-            panel8.Location = new Point(0, 41);
+            panel8.Location = new Point(0, 31);
+            panel8.Margin = new Padding(3, 2, 3, 2);
             panel8.Name = "panel8";
-            panel8.Padding = new Padding(5);
-            panel8.Size = new Size(569, 550);
+            panel8.Padding = new Padding(4);
+            panel8.Size = new Size(499, 411);
             panel8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel8.TabIndex = 27;
             panel8.Text = "panel8";
@@ -249,9 +278,10 @@
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox5.ErrorImage = (Image)resources.GetObject("pictureBox5.ErrorImage");
-            pictureBox5.Location = new Point(8, 5);
+            pictureBox5.Location = new Point(7, 4);
+            pictureBox5.Margin = new Padding(3, 2, 3, 2);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(42, 47);
+            pictureBox5.Size = new Size(37, 35);
             pictureBox5.TabIndex = 43;
             pictureBox5.TabStop = false;
             // 
@@ -264,11 +294,12 @@
             ZoomP3.ButtonColorC = Color.Black;
             ZoomP3.Font = new Font("Segoe UI", 10F);
             ZoomP3.ForeColor = Color.White;
-            ZoomP3.Location = new Point(473, 16);
+            ZoomP3.Location = new Point(415, 12);
+            ZoomP3.Margin = new Padding(3, 2, 3, 2);
             ZoomP3.Maximum = 100L;
             ZoomP3.Minimum = 0L;
             ZoomP3.Name = "ZoomP3";
-            ZoomP3.Size = new Size(86, 30);
+            ZoomP3.Size = new Size(75, 30);
             ZoomP3.TabIndex = 39;
             ZoomP3.Text = "foreverNumeric1";
             ZoomP3.Value = 0L;
@@ -282,9 +313,10 @@
             Planilha3.Font = new Font("Segoe UI", 9F);
             Planilha3.ForeColor = SystemColors.Menu;
             Planilha3.FormattingEnabled = true;
-            Planilha3.Location = new Point(4, 61);
+            Planilha3.Location = new Point(4, 46);
+            Planilha3.Margin = new Padding(3, 2, 3, 2);
             Planilha3.Name = "Planilha3";
-            Planilha3.Size = new Size(559, 480);
+            Planilha3.Size = new Size(490, 345);
             Planilha3.TabIndex = 25;
             // 
             // Nome3
@@ -298,11 +330,12 @@
             Nome3.BorderColorD = Color.Transparent;
             Nome3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Nome3.ForeColor = SystemColors.Window;
-            Nome3.Location = new Point(83, 16);
+            Nome3.Location = new Point(73, 12);
+            Nome3.Margin = new Padding(3, 2, 3, 2);
             Nome3.MaxLength = 32767;
             Nome3.MultiLine = false;
             Nome3.Name = "Nome3";
-            Nome3.Size = new Size(376, 30);
+            Nome3.Size = new Size(330, 26);
             Nome3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             Nome3.TabIndex = 37;
             Nome3.TextAlignment = HorizontalAlignment.Center;
@@ -317,11 +350,11 @@
             Panel2.Controls.Add(panel4);
             Panel2.Dock = DockStyle.Fill;
             Panel2.EdgeColor = Color.Silver;
-            Panel2.Location = new Point(591, 13);
-            Panel2.Margin = new Padding(5);
+            Panel2.Location = new Point(516, 10);
+            Panel2.Margin = new Padding(4);
             Panel2.Name = "Panel2";
-            Panel2.Padding = new Padding(5);
-            Panel2.Size = new Size(576, 597);
+            Panel2.Padding = new Padding(4);
+            Panel2.Size = new Size(505, 447);
             Panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             Panel2.TabIndex = 25;
             Panel2.Text = "\\\\\\";
@@ -331,9 +364,9 @@
             QtdPl2.AutoSize = true;
             QtdPl2.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdPl2.ForeColor = Color.White;
-            QtdPl2.Location = new Point(493, 13);
+            QtdPl2.Location = new Point(431, 10);
             QtdPl2.Name = "QtdPl2";
-            QtdPl2.Size = new Size(75, 14);
+            QtdPl2.Size = new Size(55, 12);
             QtdPl2.TabIndex = 39;
             QtdPl2.Text = "skyLabel1";
             // 
@@ -347,10 +380,11 @@
             panel4.Controls.Add(Nome2);
             panel4.Controls.Add(ZoomP2);
             panel4.EdgeColor = Color.FromArgb(39, 51, 63);
-            panel4.Location = new Point(5, 41);
+            panel4.Location = new Point(4, 31);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(5);
-            panel4.Size = new Size(565, 550);
+            panel4.Padding = new Padding(4);
+            panel4.Size = new Size(495, 411);
             panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel4.TabIndex = 26;
             panel4.Text = "panel4";
@@ -361,9 +395,10 @@
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox2.ErrorImage = (Image)resources.GetObject("pictureBox2.ErrorImage");
-            pictureBox2.Location = new Point(8, 5);
+            pictureBox2.Location = new Point(7, 4);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(42, 47);
+            pictureBox2.Size = new Size(37, 35);
             pictureBox2.TabIndex = 42;
             pictureBox2.TabStop = false;
             // 
@@ -375,9 +410,10 @@
             Planilha2.Font = new Font("Segoe UI", 9F);
             Planilha2.ForeColor = SystemColors.Menu;
             Planilha2.FormattingEnabled = true;
-            Planilha2.Location = new Point(5, 61);
+            Planilha2.Location = new Point(4, 46);
+            Planilha2.Margin = new Padding(3, 2, 3, 2);
             Planilha2.Name = "Planilha2";
-            Planilha2.Size = new Size(552, 480);
+            Planilha2.Size = new Size(484, 345);
             Planilha2.TabIndex = 41;
             // 
             // Nome2
@@ -391,11 +427,12 @@
             Nome2.BorderColorD = Color.Transparent;
             Nome2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Nome2.ForeColor = SystemColors.Window;
-            Nome2.Location = new Point(96, 16);
+            Nome2.Location = new Point(84, 12);
+            Nome2.Margin = new Padding(3, 2, 3, 2);
             Nome2.MaxLength = 32767;
             Nome2.MultiLine = false;
             Nome2.Name = "Nome2";
-            Nome2.Size = new Size(368, 30);
+            Nome2.Size = new Size(323, 26);
             Nome2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.None;
             Nome2.TabIndex = 40;
             Nome2.TextAlignment = HorizontalAlignment.Center;
@@ -411,11 +448,12 @@
             ZoomP2.ButtonColorC = Color.Black;
             ZoomP2.Font = new Font("Segoe UI", 10F);
             ZoomP2.ForeColor = Color.White;
-            ZoomP2.Location = new Point(471, 16);
+            ZoomP2.Location = new Point(413, 12);
+            ZoomP2.Margin = new Padding(3, 2, 3, 2);
             ZoomP2.Maximum = 100L;
             ZoomP2.Minimum = 0L;
             ZoomP2.Name = "ZoomP2";
-            ZoomP2.Size = new Size(86, 30);
+            ZoomP2.Size = new Size(75, 30);
             ZoomP2.TabIndex = 38;
             ZoomP2.Text = "foreverNumeric1";
             ZoomP2.Value = 0L;
@@ -429,11 +467,11 @@
             panel1.Controls.Add(panel5);
             panel1.Dock = DockStyle.Fill;
             panel1.EdgeColor = Color.DarkGray;
-            panel1.Location = new Point(5, 13);
-            panel1.Margin = new Padding(5);
+            panel1.Location = new Point(4, 10);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(5);
-            panel1.Size = new Size(576, 597);
+            panel1.Padding = new Padding(4);
+            panel1.Size = new Size(504, 447);
             panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel1.TabIndex = 23;
             panel1.Text = "panel1";
@@ -444,9 +482,9 @@
             QtdPl1.AutoSize = true;
             QtdPl1.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdPl1.ForeColor = Color.White;
-            QtdPl1.Location = new Point(490, 13);
+            QtdPl1.Location = new Point(429, 10);
             QtdPl1.Name = "QtdPl1";
-            QtdPl1.Size = new Size(75, 14);
+            QtdPl1.Size = new Size(55, 12);
             QtdPl1.TabIndex = 37;
             QtdPl1.Text = "skyLabel1";
             QtdPl1.Click += skyLabel1_Click;
@@ -461,10 +499,11 @@
             panel5.Controls.Add(Nome1);
             panel5.Controls.Add(ZoomP1);
             panel5.EdgeColor = Color.FromArgb(39, 51, 63);
-            panel5.Location = new Point(5, 41);
+            panel5.Location = new Point(4, 31);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Padding = new Padding(5);
-            panel5.Size = new Size(566, 550);
+            panel5.Padding = new Padding(4);
+            panel5.Size = new Size(495, 411);
             panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel5.TabIndex = 27;
             panel5.Text = "panel5";
@@ -477,9 +516,10 @@
             Planilha1.Font = new Font("Segoe UI", 9F);
             Planilha1.ForeColor = SystemColors.Menu;
             Planilha1.FormattingEnabled = true;
-            Planilha1.Location = new Point(5, 61);
+            Planilha1.Location = new Point(4, 46);
+            Planilha1.Margin = new Padding(3, 2, 3, 2);
             Planilha1.Name = "Planilha1";
-            Planilha1.Size = new Size(555, 480);
+            Planilha1.Size = new Size(486, 345);
             Planilha1.TabIndex = 40;
             // 
             // pictureBox1
@@ -488,9 +528,10 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
-            pictureBox1.Location = new Point(8, 5);
+            pictureBox1.Location = new Point(7, 4);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(42, 47);
+            pictureBox1.Size = new Size(37, 35);
             pictureBox1.TabIndex = 28;
             pictureBox1.TabStop = false;
             // 
@@ -505,11 +546,12 @@
             Nome1.BorderColorD = Color.Transparent;
             Nome1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Nome1.ForeColor = SystemColors.Window;
-            Nome1.Location = new Point(99, 16);
+            Nome1.Location = new Point(87, 12);
+            Nome1.Margin = new Padding(3, 2, 3, 2);
             Nome1.MaxLength = 32767;
             Nome1.MultiLine = false;
             Nome1.Name = "Nome1";
-            Nome1.Size = new Size(369, 30);
+            Nome1.Size = new Size(323, 26);
             Nome1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.None;
             Nome1.TabIndex = 35;
             Nome1.TextAlignment = HorizontalAlignment.Center;
@@ -525,11 +567,12 @@
             ZoomP1.ButtonColorC = Color.Black;
             ZoomP1.Font = new Font("Segoe UI", 10F);
             ZoomP1.ForeColor = Color.White;
-            ZoomP1.Location = new Point(475, 16);
+            ZoomP1.Location = new Point(416, 12);
+            ZoomP1.Margin = new Padding(3, 2, 3, 2);
             ZoomP1.Maximum = 100L;
             ZoomP1.Minimum = 0L;
             ZoomP1.Name = "ZoomP1";
-            ZoomP1.Size = new Size(86, 30);
+            ZoomP1.Size = new Size(75, 30);
             ZoomP1.TabIndex = 37;
             ZoomP1.Text = "foreverNumeric1";
             ZoomP1.Value = 0L;
@@ -545,12 +588,13 @@
             tableLayoutPanel1.Controls.Add(panel1, 0, 1);
             tableLayoutPanel1.Controls.Add(Panel2, 1, 1);
             tableLayoutPanel1.Controls.Add(panel7, 2, 1);
-            tableLayoutPanel1.Location = new Point(29, 230);
+            tableLayoutPanel1.Location = new Point(25, 172);
+            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.38888884F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 98.6111145F));
-            tableLayoutPanel1.Size = new Size(1759, 615);
+            tableLayoutPanel1.Size = new Size(1539, 461);
             tableLayoutPanel1.TabIndex = 31;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
@@ -562,11 +606,11 @@
             nightHeaderLabel1.Font = new Font("Segoe UI Historic", 18.75F);
             nightHeaderLabel1.ForeColor = Color.Gray;
             nightHeaderLabel1.LeftSideForeColor = Color.Gray;
-            nightHeaderLabel1.Location = new Point(412, 149);
+            nightHeaderLabel1.Location = new Point(360, 112);
             nightHeaderLabel1.Name = "nightHeaderLabel1";
             nightHeaderLabel1.RightSideForeColor = Color.FromArgb(170, 171, 176);
             nightHeaderLabel1.Side = ReaLTaiizor.Controls.NightHeaderLabel.PanelSide.LeftPanel;
-            nightHeaderLabel1.Size = new Size(920, 49);
+            nightHeaderLabel1.Size = new Size(805, 37);
             nightHeaderLabel1.TabIndex = 35;
             nightHeaderLabel1.Text = "Antes de iniciar, selecione o arquivo para realizar a comparação!";
             nightHeaderLabel1.TextAlign = ContentAlignment.MiddleCenter;
@@ -579,25 +623,26 @@
             panel6.Anchor = AnchorStyles.Top;
             panel6.Controls.Add(nightHeaderLabel1);
             panel6.Cursor = Cursors.Hand;
-            panel6.Location = new Point(39, 245);
+            panel6.Location = new Point(34, 184);
+            panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1744, 346);
+            panel6.Size = new Size(1526, 260);
             panel6.TabIndex = 36;
             panel6.Click += panel6_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.Disable;
             BackColor = Color.Silver;
-            ClientSize = new Size(1822, 849);
+            ClientSize = new Size(1594, 637);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel6);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(pictureBox4);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 3, 2, 3);
+            Margin = new Padding(2);
             Name = "Form1";
             ShowIcon = false;
             SizeGripStyle = SizeGripStyle.Show;
@@ -656,5 +701,6 @@
         private ReaLTaiizor.Controls.SkyLabel QtdPl1;
         private ReaLTaiizor.Controls.SkyLabel QtdPl3;
         private ReaLTaiizor.Controls.SkyLabel QtdPl2;
+        private ReaLTaiizor.Controls.ParrotButton parrotButton2;
     }
 }
