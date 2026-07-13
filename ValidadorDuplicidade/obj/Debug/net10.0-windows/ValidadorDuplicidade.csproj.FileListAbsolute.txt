@@ -35,4 +35,7 @@ C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\ne
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.sourcelink.json
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.Duplicados.resources
 C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\bin\Debug\net10.0-windows\System.Windows.Forms.Ribbon.dll
-C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.Config.resources
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\bin\Debug\net10.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\bin\Debug\net10.0-windows\MailKit.dll
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\bin\Debug\net10.0-windows\MimeKit.dll
+C:\Users\ti2\source\repos\ValidadorDuplicidade\ValidadorDuplicidade\obj\Debug\net10.0-windows\ValidadorDuplicidade.Report.resources

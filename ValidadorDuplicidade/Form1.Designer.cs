@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            ReaLTaiizor.ControlRenderer controlRenderer1 = new ReaLTaiizor.ControlRenderer();
+            ReaLTaiizor.MSColorTable msColorTable1 = new ReaLTaiizor.MSColorTable();
             caminhoSelecionado = new ReaLTaiizor.Controls.HopeTextBox();
             panel3 = new ReaLTaiizor.Controls.Panel();
-            parrotButton2 = new ReaLTaiizor.Controls.ParrotButton();
             parrotButton1 = new ReaLTaiizor.Controls.ParrotButton();
             btn = new ReaLTaiizor.Controls.ParrotButton();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -60,6 +61,12 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             nightHeaderLabel1 = new ReaLTaiizor.Controls.NightHeaderLabel();
             panel6 = new Panel();
+            formMenuStrip1 = new ReaLTaiizor.Controls.FormMenuStrip();
+            problemasToolStripMenuItem = new ToolStripMenuItem();
+            abrirUmChamadoRelacionadoToolStripMenuItem = new ToolStripMenuItem();
+            formularioToolStripMenuItem = new ToolStripMenuItem();
+            relatarProblemaToolStripMenuItem = new ToolStripMenuItem();
+            duvidasToolStripMenuItem = new ToolStripMenuItem();
             panel3.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -74,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel6.SuspendLayout();
+            formMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // caminhoSelecionado
@@ -105,7 +113,6 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(64, 64, 64);
-            panel3.Controls.Add(parrotButton2);
             panel3.Controls.Add(parrotButton1);
             panel3.Controls.Add(btn);
             panel3.Controls.Add(caminhoSelecionado);
@@ -120,32 +127,6 @@
             panel3.TabIndex = 26;
             panel3.Text = "panel3";
             panel3.Click += panel3_Click;
-            // 
-            // parrotButton2
-            // 
-            parrotButton2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            parrotButton2.BackgroundColor = Color.FromArgb(83, 145, 204);
-            parrotButton2.BackgroundImage = Properties.Resources.config;
-            parrotButton2.ButtonImage = Properties.Resources.config;
-            parrotButton2.ButtonStyle = ReaLTaiizor.Controls.ParrotButton.Style.MaterialRounded;
-            parrotButton2.ButtonText = "";
-            parrotButton2.ClickBackColor = Color.Silver;
-            parrotButton2.ClickTextColor = Color.White;
-            parrotButton2.CornerRadius = 5;
-            parrotButton2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            parrotButton2.Horizontal_Alignment = StringAlignment.Center;
-            parrotButton2.HoverBackgroundColor = Color.FromArgb(225, 225, 225);
-            parrotButton2.HoverTextColor = Color.Black;
-            parrotButton2.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Center;
-            parrotButton2.Location = new Point(9, 20);
-            parrotButton2.Name = "parrotButton2";
-            parrotButton2.Size = new Size(42, 35);
-            parrotButton2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            parrotButton2.TabIndex = 39;
-            parrotButton2.TextColor = Color.White;
-            parrotButton2.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            parrotButton2.Vertical_Alignment = StringAlignment.Center;
-            parrotButton2.Click += parrotButton2_Click;
             // 
             // parrotButton1
             // 
@@ -186,9 +167,9 @@
             btn.HoverBackgroundColor = Color.FromArgb(225, 225, 225);
             btn.HoverTextColor = Color.Black;
             btn.ImagePosition = ReaLTaiizor.Controls.ParrotButton.ImgPosition.Left;
-            btn.Location = new Point(57, 20);
+            btn.Location = new Point(22, 20);
             btn.Name = "btn";
-            btn.Size = new Size(175, 35);
+            btn.Size = new Size(210, 35);
             btn.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             btn.TabIndex = 37;
             btn.TextColor = Color.White;
@@ -202,7 +183,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(panel3, 0, 0);
             tableLayoutPanel2.Dock = DockStyle.Top;
-            tableLayoutPanel2.Location = new Point(0, 0);
+            tableLayoutPanel2.Location = new Point(0, 24);
             tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
@@ -217,7 +198,7 @@
             pictureBox4.BackColor = Color.Silver;
             pictureBox4.BackgroundImage = Properties.Resources.logo_GLPI_250_black;
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Location = new Point(545, 81);
+            pictureBox4.Location = new Point(542, 92);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(505, 89);
             pictureBox4.TabIndex = 34;
@@ -630,6 +611,60 @@
             panel6.TabIndex = 36;
             panel6.Click += panel6_Click;
             // 
+            // formMenuStrip1
+            // 
+            formMenuStrip1.BackColor = Color.White;
+            formMenuStrip1.Items.AddRange(new ToolStripItem[] { problemasToolStripMenuItem, duvidasToolStripMenuItem });
+            formMenuStrip1.Location = new Point(0, 0);
+            formMenuStrip1.Name = "formMenuStrip1";
+            controlRenderer1.ColorTable = msColorTable1;
+            controlRenderer1.RoundedEdges = true;
+            formMenuStrip1.Renderer = controlRenderer1;
+            formMenuStrip1.Size = new Size(1594, 24);
+            formMenuStrip1.TabIndex = 37;
+            formMenuStrip1.Text = "formMenuStrip1";
+            // 
+            // problemasToolStripMenuItem
+            // 
+            problemasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { abrirUmChamadoRelacionadoToolStripMenuItem, relatarProblemaToolStripMenuItem });
+            problemasToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
+            problemasToolStripMenuItem.Name = "problemasToolStripMenuItem";
+            problemasToolStripMenuItem.Size = new Size(75, 20);
+            problemasToolStripMenuItem.Text = "Problemas";
+            problemasToolStripMenuItem.Click += problemasToolStripMenuItem_Click;
+            // 
+            // abrirUmChamadoRelacionadoToolStripMenuItem
+            // 
+            abrirUmChamadoRelacionadoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { formularioToolStripMenuItem });
+            abrirUmChamadoRelacionadoToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
+            abrirUmChamadoRelacionadoToolStripMenuItem.Name = "abrirUmChamadoRelacionadoToolStripMenuItem";
+            abrirUmChamadoRelacionadoToolStripMenuItem.Size = new Size(242, 22);
+            abrirUmChamadoRelacionadoToolStripMenuItem.Text = "Abrir um chamado relacionado:";
+            abrirUmChamadoRelacionadoToolStripMenuItem.Click += abrirUmChamadoRelacionadoToolStripMenuItem_Click;
+            // 
+            // formularioToolStripMenuItem
+            // 
+            formularioToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
+            formularioToolStripMenuItem.Name = "formularioToolStripMenuItem";
+            formularioToolStripMenuItem.Size = new Size(132, 22);
+            formularioToolStripMenuItem.Text = "Formulario";
+            formularioToolStripMenuItem.Click += formularioToolStripMenuItem_Click;
+            // 
+            // relatarProblemaToolStripMenuItem
+            // 
+            relatarProblemaToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
+            relatarProblemaToolStripMenuItem.Name = "relatarProblemaToolStripMenuItem";
+            relatarProblemaToolStripMenuItem.Size = new Size(242, 22);
+            relatarProblemaToolStripMenuItem.Text = "Relatar Problema ";
+            relatarProblemaToolStripMenuItem.Click += relatarProblemaToolStripMenuItem_Click;
+            // 
+            // duvidasToolStripMenuItem
+            // 
+            duvidasToolStripMenuItem.ForeColor = Color.FromArgb(80, 80, 80);
+            duvidasToolStripMenuItem.Name = "duvidasToolStripMenuItem";
+            duvidasToolStripMenuItem.Size = new Size(61, 20);
+            duvidasToolStripMenuItem.Text = "Duvidas";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -641,6 +676,7 @@
             Controls.Add(panel6);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(pictureBox4);
+            Controls.Add(formMenuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "Form1";
@@ -667,7 +703,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             panel6.ResumeLayout(false);
+            formMenuStrip1.ResumeLayout(false);
+            formMenuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -701,6 +740,11 @@
         private ReaLTaiizor.Controls.SkyLabel QtdPl1;
         private ReaLTaiizor.Controls.SkyLabel QtdPl3;
         private ReaLTaiizor.Controls.SkyLabel QtdPl2;
-        private ReaLTaiizor.Controls.ParrotButton parrotButton2;
+        private ReaLTaiizor.Controls.FormMenuStrip formMenuStrip1;
+        private ToolStripMenuItem problemasToolStripMenuItem;
+        private ToolStripMenuItem abrirUmChamadoRelacionadoToolStripMenuItem;
+        private ToolStripMenuItem relatarProblemaToolStripMenuItem;
+        private ToolStripMenuItem formularioToolStripMenuItem;
+        private ToolStripMenuItem duvidasToolStripMenuItem;
     }
 }

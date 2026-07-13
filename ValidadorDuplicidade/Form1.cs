@@ -6,8 +6,12 @@ using ReaLTaiizor.Controls;
 using ReaLTaiizor.Extension;
 using ReaLTaiizor.Forms;
 using System.CodeDom;
+using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Windows.Forms;
+using MailKit.Net.Smtp;
+using MailKit.Security;
+using MimeKit;
 
 
 
@@ -494,9 +498,33 @@ namespace ValidadorDuplicidade
 
         private void parrotButton2_Click(object sender, EventArgs e)
         {
-            Config f = new Config();
 
-            f.ShowDialog();
+        }
+
+        private void problemasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void abrirUmChamadoRelacionadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void relatarProblemaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Report r = new Report();
+            r.ShowDialog();
+
+        }
+
+        private void formularioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://docs.google.com/forms/d/e/1FAIpQLSdELOdNUu5spQlh57C4lATaTv7DSP6zPwe9r2QK1GI1kgMXXw/viewform",
+                UseShellExecute = true
+            });
         }
     }
 }
