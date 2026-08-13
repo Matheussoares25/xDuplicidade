@@ -36,7 +36,10 @@ namespace ValidadorDuplicidade
         private DataGridViewRow linhaResultado;
 
 
-
+        private void Duplicados_Load(object sender, EventArgs e)
+        {
+            
+        }
 
         public Duplicados()
         {
@@ -59,13 +62,14 @@ namespace ValidadorDuplicidade
             ResultadoLista1.Columns["ValorPenultimaTb"].HeaderText = CabeçalhoValor;
 
 
+
             ToolTip dica = new ToolTip();
             ToolTip info = new ToolTip();
 
             dica.ToolTipIcon = ToolTipIcon.Info;
-           
+
             //dica.SetToolTip(DescRegistrosVigente, "Destaca itens que foram encontrados somente na semana vigente (A busca é feita baseada no nome dos registros)");
-            info.SetToolTip(BtnEscondeDicas, "Exibe ou esconde as dicas para utilização da ferramenta");
+            //info.SetToolTip(BtnEscondeDicas, "Exibe ou esconde as dicas para utilização da ferramenta");
             info.SetToolTip(BtnExpandirUltimaSemana, "Recolhe ou expande a tabela com os registros da ultima semana");
             info.SetToolTip(BtnExpandirPenultimaSemana, "Recolhe ou expande a tabela com os registros da penultima semana");
 
@@ -76,8 +80,8 @@ namespace ValidadorDuplicidade
 
             init();
             Colorir();
-            CentralTabelas.RowStyles[1].Height = 7;
-            CentralTabelas.RowStyles[2].Height = 7;
+            CentralTabelas.RowStyles[1].Height = 5;
+            CentralTabelas.RowStyles[2].Height = 5;
 
             this.FormBorderStyle = FormBorderStyle.Sizable;
 
@@ -86,6 +90,7 @@ namespace ValidadorDuplicidade
         private void FiltroValor_CheckedChanged(object sender, EventArgs e)
         {
         }
+
 
         private void Colorir()
         {
@@ -177,7 +182,7 @@ namespace ValidadorDuplicidade
 
 
         }
-        
+
         public void init()
         {
 
@@ -193,6 +198,7 @@ namespace ValidadorDuplicidade
 
                 foreach (var dado in retorno.Duplicados["DuplicadosTodos"])
                 {
+
                     TabelaResultado.Rows.Add(
                         dado.NomeRegistro,
                         dado.TipoRegistro,
@@ -207,6 +213,7 @@ namespace ValidadorDuplicidade
 
                 foreach (var dado in retorno.Duplicados["RegistrosLista1"])
                 {
+
                     ResultadoLista1.Rows.Add(
                         dado.NomeRegistro,
                         dado.TipoRegistro,
@@ -219,6 +226,7 @@ namespace ValidadorDuplicidade
 
                 foreach (var dado in retorno.Duplicados["RegistrosLista2"])
                 {
+
                     ResultadoLista2.Rows.Add(
                         dado.NomeRegistro,
                         dado.TipoRegistro,
@@ -242,10 +250,6 @@ namespace ValidadorDuplicidade
             }
         }
 
-        private void Duplicados_Load(object? sender, EventArgs e)
-        {
-
-        }
 
         private void moonLabel1_Click(object sender, EventArgs e)
         {
@@ -483,16 +487,16 @@ namespace ValidadorDuplicidade
 
         private void royalButton1_Click(object sender, EventArgs e)
         {
-            PanelAtivo = !PanelAtivo;
-            PanelDicas.Height = (PanelAtivo ? 176 : 37);
-            BtnEscondeDicas.Text = PanelAtivo ? "˄" : "˅";
-            NavBar.Visible = PanelAtivo;
-           
-                ordenarTamanhos();
-                           
+            //PanelAtivo = !PanelAtivo;
+            //PanelDicas.Height = (PanelAtivo ? 176 : 37);
+            //BtnEscondeDicas.Text = PanelAtivo ? "˄" : "˅";
+            //NavBar.Visible = PanelAtivo;
+
+            //    ordenarTamanhos();
+
         }
 
-        
+
         private void royalButton1_Click_1(object sender, EventArgs e)
         {
 
@@ -512,6 +516,15 @@ namespace ValidadorDuplicidade
             redimencionar(btn1: false, btn2: true);
         }
 
+        private void splitContainer1_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Shown(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 
 
