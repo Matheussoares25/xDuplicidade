@@ -210,7 +210,7 @@
             QtdResultado.Enabled = false;
             QtdResultado.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdResultado.ForeColor = Color.FromArgb(27, 94, 137);
-            QtdResultado.Location = new Point(666, 8);
+            QtdResultado.Location = new Point(664, 8);
             QtdResultado.MaxLength = 32767;
             QtdResultado.MultiLine = false;
             QtdResultado.Name = "QtdResultado";
@@ -271,7 +271,7 @@
             ResultadoLista1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             ResultadoLista1.ScrollBars = ScrollBars.None;
             ResultadoLista1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ResultadoLista1.Size = new Size(761, 176);
+            ResultadoLista1.Size = new Size(759, 176);
             ResultadoLista1.TabIndex = 9;
             ResultadoLista1.CellContentClick += ResultadoLista1_CellContentClick;
             // 
@@ -354,7 +354,7 @@
             TabelaResultado.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             TabelaResultado.ScrollBars = ScrollBars.None;
             TabelaResultado.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            TabelaResultado.Size = new Size(759, 169);
+            TabelaResultado.Size = new Size(757, 169);
             TabelaResultado.TabIndex = 0;
             TabelaResultado.CellContentClick += TabelaResultado_CellClick;
             // 
@@ -437,7 +437,7 @@
             ResultadoLista2.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             ResultadoLista2.ScrollBars = ScrollBars.None;
             ResultadoLista2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            ResultadoLista2.Size = new Size(761, 176);
+            ResultadoLista2.Size = new Size(759, 176);
             ResultadoLista2.TabIndex = 10;
             ResultadoLista2.CellContentClick += ResultadoLista2_CellContentClick;
             // 
@@ -485,7 +485,7 @@
             QtdTabela1.Enabled = false;
             QtdTabela1.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdTabela1.ForeColor = Color.FromArgb(27, 94, 137);
-            QtdTabela1.Location = new Point(666, 5);
+            QtdTabela1.Location = new Point(664, 5);
             QtdTabela1.MaxLength = 32767;
             QtdTabela1.MultiLine = false;
             QtdTabela1.Name = "QtdTabela1";
@@ -508,7 +508,7 @@
             panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
             panel2.Padding = new Padding(5);
-            panel2.Size = new Size(798, 219);
+            panel2.Size = new Size(796, 219);
             panel2.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel2.TabIndex = 12;
             panel2.Text = "panel2";
@@ -523,7 +523,7 @@
             panel5.Location = new Point(17, 32);
             panel5.Name = "panel5";
             panel5.Padding = new Padding(5);
-            panel5.Size = new Size(769, 179);
+            panel5.Size = new Size(767, 179);
             panel5.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel5.TabIndex = 17;
             panel5.Text = "panel5";
@@ -549,7 +549,7 @@
             panel6.Location = new Point(14, 28);
             panel6.Name = "panel6";
             panel6.Padding = new Padding(4);
-            panel6.Size = new Size(769, 184);
+            panel6.Size = new Size(767, 184);
             panel6.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel6.TabIndex = 17;
             panel6.Text = "panel6";
@@ -566,7 +566,7 @@
             panel3.Location = new Point(3, 228);
             panel3.Name = "panel3";
             panel3.Padding = new Padding(5);
-            panel3.Size = new Size(798, 219);
+            panel3.Size = new Size(796, 219);
             panel3.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel3.TabIndex = 13;
             panel3.Text = "panel3";
@@ -582,7 +582,7 @@
             BtnExpandirUltimaSemana.HotTrackColor = Color.FromArgb(221, 221, 221);
             BtnExpandirUltimaSemana.Image = null;
             BtnExpandirUltimaSemana.LayoutFlags = ReaLTaiizor.Util.RoyalLayoutFlags.ImageBeforeText;
-            BtnExpandirUltimaSemana.Location = new Point(755, 5);
+            BtnExpandirUltimaSemana.Location = new Point(753, 5);
             BtnExpandirUltimaSemana.Margin = new Padding(3, 2, 3, 2);
             BtnExpandirUltimaSemana.Name = "BtnExpandirUltimaSemana";
             BtnExpandirUltimaSemana.PressedColor = Color.FromArgb(64, 64, 64);
@@ -616,7 +616,7 @@
             QtdTabela2.Enabled = false;
             QtdTabela2.Font = new Font("Verdana", 6.75F, FontStyle.Bold);
             QtdTabela2.ForeColor = Color.FromArgb(27, 94, 137);
-            QtdTabela2.Location = new Point(666, 5);
+            QtdTabela2.Location = new Point(664, 5);
             QtdTabela2.MaxLength = 32767;
             QtdTabela2.MultiLine = false;
             QtdTabela2.Name = "QtdTabela2";
@@ -652,7 +652,7 @@
             panel4.Location = new Point(3, 453);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(5);
-            panel4.Size = new Size(798, 219);
+            panel4.Size = new Size(796, 219);
             panel4.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel4.TabIndex = 14;
             panel4.Text = "panel4";
@@ -668,7 +668,7 @@
             BtnExpandirPenultimaSemana.HotTrackColor = Color.FromArgb(221, 221, 221);
             BtnExpandirPenultimaSemana.Image = null;
             BtnExpandirPenultimaSemana.LayoutFlags = ReaLTaiizor.Util.RoyalLayoutFlags.ImageBeforeText;
-            BtnExpandirPenultimaSemana.Location = new Point(755, 6);
+            BtnExpandirPenultimaSemana.Location = new Point(753, 6);
             BtnExpandirPenultimaSemana.Margin = new Padding(3, 2, 3, 2);
             BtnExpandirPenultimaSemana.Name = "BtnExpandirPenultimaSemana";
             BtnExpandirPenultimaSemana.PressedColor = Color.FromArgb(64, 64, 64);
@@ -687,7 +687,7 @@
             panel7.Location = new Point(14, 28);
             panel7.Name = "panel7";
             panel7.Padding = new Padding(4);
-            panel7.Size = new Size(769, 184);
+            panel7.Size = new Size(767, 184);
             panel7.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel7.TabIndex = 17;
             panel7.Text = "panel7";
@@ -708,7 +708,7 @@
             CentralTabelas.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             CentralTabelas.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             CentralTabelas.RowStyles.Add(new RowStyle());
-            CentralTabelas.Size = new Size(804, 677);
+            CentralTabelas.Size = new Size(802, 677);
             CentralTabelas.TabIndex = 15;
             // 
             // headerLabel1
@@ -729,7 +729,7 @@
             DescUltima.BackColor = Color.Transparent;
             DescUltima.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             DescUltima.ForeColor = Color.White;
-            DescUltima.Location = new Point(28, 36);
+            DescUltima.Location = new Point(28, 40);
             DescUltima.Name = "DescUltima";
             DescUltima.Size = new Size(331, 23);
             DescUltima.TabIndex = 23;
@@ -740,11 +740,11 @@
             infoIcon3.BackColor = Color.Transparent;
             infoIcon3.BaseColor = Color.Crimson;
             infoIcon3.CircleColor = Color.Crimson;
-            infoIcon3.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            infoIcon3.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             infoIcon3.ForeColor = Color.Crimson;
-            infoIcon3.Location = new Point(8, 36);
+            infoIcon3.Location = new Point(5, 36);
             infoIcon3.Name = "infoIcon3";
-            infoIcon3.Size = new Size(15, 17);
+            infoIcon3.Size = new Size(22, 20);
             infoIcon3.String = "¡";
             infoIcon3.TabIndex = 22;
             infoIcon3.Text = "infoIcon3";
@@ -754,7 +754,7 @@
             DescDuplicadosDuas.BackColor = Color.Transparent;
             DescDuplicadosDuas.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             DescDuplicadosDuas.ForeColor = Color.White;
-            DescDuplicadosDuas.Location = new Point(27, 60);
+            DescDuplicadosDuas.Location = new Point(27, 64);
             DescDuplicadosDuas.Name = "DescDuplicadosDuas";
             DescDuplicadosDuas.Size = new Size(250, 17);
             DescDuplicadosDuas.TabIndex = 25;
@@ -765,11 +765,11 @@
             infoIcon4.BackColor = Color.Transparent;
             infoIcon4.BaseColor = Color.MediumBlue;
             infoIcon4.CircleColor = Color.MediumBlue;
-            infoIcon4.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            infoIcon4.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             infoIcon4.ForeColor = Color.MediumBlue;
-            infoIcon4.Location = new Point(8, 60);
+            infoIcon4.Location = new Point(5, 60);
             infoIcon4.Name = "infoIcon4";
-            infoIcon4.Size = new Size(15, 17);
+            infoIcon4.Size = new Size(22, 20);
             infoIcon4.String = "¡";
             infoIcon4.TabIndex = 24;
             infoIcon4.Text = "infoIcon4";
@@ -779,7 +779,7 @@
             DescPenultima.BackColor = Color.Transparent;
             DescPenultima.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DescPenultima.ForeColor = Color.White;
-            DescPenultima.Location = new Point(29, 13);
+            DescPenultima.Location = new Point(29, 15);
             DescPenultima.Name = "DescPenultima";
             DescPenultima.Size = new Size(367, 23);
             DescPenultima.TabIndex = 27;
@@ -788,13 +788,14 @@
             // infoIcon1
             // 
             infoIcon1.BackColor = Color.Transparent;
+            infoIcon1.BackgroundImage = Properties.Resources.circle_info_solid;
             infoIcon1.BaseColor = Color.Yellow;
             infoIcon1.CircleColor = Color.Yellow;
-            infoIcon1.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            infoIcon1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             infoIcon1.ForeColor = Color.Yellow;
-            infoIcon1.Location = new Point(8, 10);
+            infoIcon1.Location = new Point(5, 13);
             infoIcon1.Name = "infoIcon1";
-            infoIcon1.Size = new Size(15, 17);
+            infoIcon1.Size = new Size(22, 20);
             infoIcon1.String = "¡";
             infoIcon1.TabIndex = 18;
             infoIcon1.Text = "infoIcon1";
@@ -803,11 +804,11 @@
             // 
             lostBorderPanel3.BackColor = Color.FromArgb(64, 64, 64);
             lostBorderPanel3.BorderColor = Color.DimGray;
-            lostBorderPanel3.Controls.Add(DescPenultima);
-            lostBorderPanel3.Controls.Add(DescDuplicadosDuas);
             lostBorderPanel3.Controls.Add(infoIcon1);
             lostBorderPanel3.Controls.Add(infoIcon3);
             lostBorderPanel3.Controls.Add(infoIcon4);
+            lostBorderPanel3.Controls.Add(DescPenultima);
+            lostBorderPanel3.Controls.Add(DescDuplicadosDuas);
             lostBorderPanel3.Controls.Add(DescUltima);
             lostBorderPanel3.Font = new Font("Segoe UI", 12F);
             lostBorderPanel3.ForeColor = Color.White;
@@ -832,7 +833,7 @@
             lostBorderPanel1.Name = "lostBorderPanel1";
             lostBorderPanel1.Padding = new Padding(5);
             lostBorderPanel1.ShowText = true;
-            lostBorderPanel1.Size = new Size(329, 91);
+            lostBorderPanel1.Size = new Size(329, 109);
             lostBorderPanel1.TabIndex = 32;
             // 
             // headerLabel5
@@ -840,7 +841,7 @@
             headerLabel5.BackColor = Color.Transparent;
             headerLabel5.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold);
             headerLabel5.ForeColor = Color.White;
-            headerLabel5.Location = new Point(39, 53);
+            headerLabel5.Location = new Point(38, 63);
             headerLabel5.Name = "headerLabel5";
             headerLabel5.Size = new Size(231, 46);
             headerLabel5.TabIndex = 31;
@@ -853,7 +854,7 @@
             infoIcon6.CircleColor = Color.White;
             infoIcon6.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             infoIcon6.ForeColor = Color.White;
-            infoIcon6.Location = new Point(17, 53);
+            infoIcon6.Location = new Point(16, 63);
             infoIcon6.Name = "infoIcon6";
             infoIcon6.Size = new Size(15, 17);
             infoIcon6.String = "¡";
@@ -910,7 +911,7 @@
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(4);
-            panel1.Size = new Size(337, 687);
+            panel1.Size = new Size(339, 687);
             panel1.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel1.TabIndex = 38;
             panel1.Text = "panel1";
@@ -921,10 +922,10 @@
             panel8.Controls.Add(CentralTabelas);
             panel8.Dock = DockStyle.Fill;
             panel8.EdgeColor = Color.FromArgb(32, 41, 50);
-            panel8.Location = new Point(337, 0);
+            panel8.Location = new Point(339, 0);
             panel8.Name = "panel8";
             panel8.Padding = new Padding(5);
-            panel8.Size = new Size(814, 687);
+            panel8.Size = new Size(812, 687);
             panel8.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             panel8.TabIndex = 39;
             panel8.Text = "panel8";
