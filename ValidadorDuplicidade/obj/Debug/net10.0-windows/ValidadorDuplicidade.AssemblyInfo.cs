@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ValidadorDuplicidade")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3866c7134d008b1bb36b8b9a117a9137a64e18db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e29fa91af03c9f7d03ca611026bad9ee8f30f23")]
 [assembly: System.Reflection.AssemblyProductAttribute("ValidadorDuplicidade")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ValidadorDuplicidade")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
