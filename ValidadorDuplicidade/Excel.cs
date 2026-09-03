@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using System.IO.Packaging;
 
 namespace ValidadorDuplicidade
 {
@@ -9,7 +10,7 @@ namespace ValidadorDuplicidade
         bool Valor = false;
 
 
-        public (List<Registro> Lista1,List<Registro> Lista2,List<Registro> Lista3,Dictionary<string, List<Registro>> Duplicados,Dictionary<string, string> nomes)abrirDocumento(string caminho, Filtros filtro)
+        public (List<Registro> Lista1,List<Registro> Lista2,List<Registro> Lista3,Dictionary<string, List<Registro>> Duplicados,Dictionary<string, string> nomes, List<string> planilhasUsadas, int TotalPlanilhas)abrirDocumento(string caminho, Filtros filtro)
         {
             if(filtro.Valor)
             {
@@ -27,8 +28,11 @@ namespace ValidadorDuplicidade
                 List<Registro> Lista2 = new();
                 List<Registro> Lista3 = new();
                 List<Registro> duplicadosTodos = new();
-
+                string nomeplanilhas = string.Empty;
                 string filePath = caminho;
+                List<string> PlanilhasUsadas = new();
+                int totalplanilhas = 0;
+
 
                 if (string.IsNullOrWhiteSpace(filePath))
                 {
@@ -37,17 +41,26 @@ namespace ValidadorDuplicidade
 
                 using (ExcelPackage package = new ExcelPackage(new FileInfo(filePath)))
                 {
-
+                    
+                   
                     if (package?.Workbook?.Worksheets == null || package.Workbook.Worksheets.Count < 3)
                     {
                         throw new Erros(406, "O arquivo deve conter pelo menos 3 planilhas." );
                         
                     }
 
+                     totalplanilhas = package.Workbook.Worksheets.Count;
 
-                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-                    ExcelWorksheet worksheet2 = package.Workbook.Worksheets[1];
-                    ExcelWorksheet worksheet3 = package.Workbook.Worksheets[2];
+                    for (int i = totalplanilhas - 3; i < totalplanilhas; i++)
+                    {
+                        PlanilhasUsadas.Add(package.Workbook.Worksheets[i].Name);
+                    }
+
+
+
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[totalplanilhas - 3];
+                    ExcelWorksheet worksheet2 = package.Workbook.Worksheets[totalplanilhas - 2];
+                    ExcelWorksheet worksheet3 = package.Workbook.Worksheets[totalplanilhas - 1];
 
                     if (worksheet.Dimension == null ||
                         worksheet2.Dimension == null ||
@@ -185,7 +198,7 @@ namespace ValidadorDuplicidade
 
                     //Lista 1 - 3 le todas tabelas sem filtros, Duplicados 1 2 retorna os registros da lista 1 e 2 que tem os mesmo registros da lista 3
                     //sendo assim os duplicados, e o DuplicadosTodos retorna os registros da lista 3 que tem os mesmo registros da lista 1 ou 2, sendo assim os duplicados
-                    return (Lista1, Lista2, Lista3, duplicados, nomes);
+                    return (Lista1, Lista2, Lista3, duplicados, nomes, PlanilhasUsadas, totalplanilhas);
                 }
             }
             catch (Exception ex)
@@ -202,7 +215,9 @@ namespace ValidadorDuplicidade
                     new List<Registro>(),
                     new List<Registro>(),
                     new Dictionary<string, List<Registro>>(),
-                    new Dictionary<string, string>()
+                    new Dictionary<string, string>(),
+                    new List<string>(),
+                    TotalPlanilhas: 0
                 );
             }
         }

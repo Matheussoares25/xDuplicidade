@@ -19,10 +19,10 @@ using MimeKit;
 
 namespace ValidadorDuplicidade
 {
+
+    
     public partial class Form1 : Form
     {
-
-
 
         Filtros f = new Filtros();
 
@@ -35,6 +35,7 @@ namespace ValidadorDuplicidade
             InitializeComponent();
             this.Load += Form1_Load;
 
+
             Properties.Settings.Default.Caminho_arq = null;
 
 
@@ -44,9 +45,6 @@ namespace ValidadorDuplicidade
             dica.SetToolTip(QtdPl2, "Quantidade de registros na Planilha 2");
             dica.SetToolTip(QtdPl3, "Quantidade de registros na Planilha 3");
             dica.SetToolTip(btn, "Selecione um arquivo para validar a duplicidade dos dados");
-
-
-
 
 
 
@@ -84,17 +82,11 @@ namespace ValidadorDuplicidade
 
             Planilha3.ForeColor = Color.White;
 
-
         }
-
-
-
 
 
         private void LoadTela(int tereceiraPlanilha = 0)
         {
-
-
 
 
         }
@@ -114,8 +106,6 @@ namespace ValidadorDuplicidade
 
             ExcelPackage.License.SetNonCommercialPersonal("Matheus");
 
-
-
             try
             {
                 numeroDuplicados = 0;
@@ -129,6 +119,7 @@ namespace ValidadorDuplicidade
 
                 var retorno = excel.abrirDocumento(Properties.Settings.Default.Caminho_arq, f);
 
+                MessageBox.Show($"Foi encontrado no arquivo {retorno.TotalPlanilhas} planilhas.  Planilhas usadas no comparativo: {string.Join(", ", retorno.planilhasUsadas)}", "Informação");
 
                 Planilha1.Items.Clear();
                 Planilha2.Items.Clear();
@@ -175,9 +166,9 @@ namespace ValidadorDuplicidade
                 QtdPl3.Text = contador3.ToString() + "  Registros";
                 QtdPl1.Text = contador1.ToString() + "  Registros";
 
-                Nome1.Text = retorno.nomes["nome1"] + " Tabela 1";
-                Nome2.Text = retorno.nomes["nome2"] + " Tabela 2";
-                Nome3.Text = retorno.nomes["nome3"] + " Tabela 3";
+                Nome1.Text = retorno.nomes["nome1"] + " - (Penultima)";
+                Nome2.Text = retorno.nomes["nome2"] + " - (Ultima)";
+                Nome3.Text = retorno.nomes["nome3"] + " - (Atual)";
             }
             catch (Erros ex)
             {
