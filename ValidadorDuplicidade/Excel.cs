@@ -10,16 +10,8 @@ namespace ValidadorDuplicidade
         bool Valor = false;
 
 
-        public (List<Registro> Lista1,List<Registro> Lista2,List<Registro> Lista3,Dictionary<string, List<Registro>> Duplicados,Dictionary<string, string> nomes, List<string> planilhasUsadas, int TotalPlanilhas)abrirDocumento(string caminho, Filtros filtro)
+        public (List<Registro> Lista1,List<Registro> Lista2,List<Registro> Lista3,Dictionary<string, List<Registro>> Duplicados,Dictionary<string, string> nomes, List<string> planilhasUsadas, int TotalPlanilhas)abrirDocumento(string caminho,Ordenar ordenar)
         {
-            if(filtro.Valor)
-            {
-                Valor = true;
-            }
-            else
-            {
-                Valor = false;
-            }
 
 
             try
@@ -62,6 +54,11 @@ namespace ValidadorDuplicidade
                     ExcelWorksheet worksheet2 = package.Workbook.Worksheets[totalplanilhas - 2];
                     ExcelWorksheet worksheet3 = package.Workbook.Worksheets[totalplanilhas - 1];
 
+                    string nome = worksheet.Name;
+                    string nome2 = worksheet2.Name;
+                    string nome3 = worksheet3.Name;
+
+
                     if (worksheet.Dimension == null ||
                         worksheet2.Dimension == null ||
                         worksheet3.Dimension == null)
@@ -74,10 +71,10 @@ namespace ValidadorDuplicidade
                     //momento que define qual celula tem nome e valor;
                     for (int row = 2; row <= worksheet.Dimension.End.Row; row++)
                     {
-                        string nomeCel = worksheet.Cells[row, 1].Text?.Trim() ?? string.Empty;
-                        string tipoCel = worksheet.Cells[row, 2].Text?.Trim() ?? string.Empty;
-                        string dataCel = worksheet.Cells[row, 3].Text?.Trim() ?? string.Empty;
-                        string valorCel = worksheet.Cells[row, 4].Text?.Trim() ?? string.Empty;
+                        string nomeCel = worksheet.Cells[row, ordenar.CelNome].Text?.Trim() ?? string.Empty;
+                        string tipoCel = worksheet.Cells[row, ordenar.CelTipo].Text?.Trim() ?? string.Empty;
+                        string dataCel = worksheet.Cells[row, ordenar.CelData].Text?.Trim() ?? string.Empty;
+                        string valorCel = worksheet.Cells[row, ordenar.CelValor].Text?.Trim() ?? string.Empty;
 
                         if(string.IsNullOrEmpty(nomeCel) && string.IsNullOrEmpty(tipoCel) && string.IsNullOrEmpty(dataCel) && string.IsNullOrEmpty(valorCel))
                         {
@@ -100,10 +97,10 @@ namespace ValidadorDuplicidade
 
                     for (int row = 2; row <= worksheet2.Dimension.End.Row; row++)
                     {
-                        string nomeCel = worksheet2.Cells[row, 1].Text?.Trim() ?? string.Empty;
-                        string tipoCel = worksheet2.Cells[row, 2].Text?.Trim() ?? string.Empty;
-                        string dataCel = worksheet2.Cells[row, 3].Text?.Trim() ?? string.Empty;
-                        string valorCel = worksheet2.Cells[row, 4].Text?.Trim() ?? string.Empty;
+                        string nomeCel = worksheet2.Cells[row, ordenar.CelNome].Text?.Trim() ?? string.Empty;
+                        string tipoCel = worksheet2.Cells[row, ordenar.CelTipo].Text?.Trim() ?? string.Empty;
+                        string dataCel = worksheet2.Cells[row, ordenar.CelData].Text?.Trim() ?? string.Empty;
+                        string valorCel = worksheet2.Cells[row, ordenar.CelValor].Text?.Trim() ?? string.Empty;
 
                         if (string.IsNullOrEmpty(nomeCel) && string.IsNullOrEmpty(tipoCel) && string.IsNullOrEmpty(dataCel) && string.IsNullOrEmpty(valorCel))
                         {
@@ -124,10 +121,10 @@ namespace ValidadorDuplicidade
 
                     for (int row = 2; row <= worksheet3.Dimension.End.Row; row++)
                     {
-                        string nomeCel = worksheet3.Cells[row, 1].Text?.Trim() ?? string.Empty;
-                        string tipoCel = worksheet3.Cells[row, 2].Text?.Trim() ?? string.Empty;
-                        string dataCel = worksheet3.Cells[row, 3].Text?.Trim() ?? string.Empty;
-                        string valorCel = worksheet3.Cells[row, 4].Text?.Trim() ?? string.Empty;
+                        string nomeCel = worksheet3.Cells[row, ordenar.CelNome].Text?.Trim() ?? string.Empty;
+                        string tipoCel = worksheet3.Cells[row, ordenar.CelTipo].Text?.Trim() ?? string.Empty;
+                        string dataCel = worksheet3.Cells[row, ordenar.CelData].Text?.Trim() ?? string.Empty;
+                        string valorCel = worksheet3.Cells[row, ordenar.CelValor].Text?.Trim() ?? string.Empty;
 
                         if (string.IsNullOrEmpty(nomeCel) && string.IsNullOrEmpty(tipoCel) && string.IsNullOrEmpty(dataCel) && string.IsNullOrEmpty(valorCel))
                         {
@@ -145,9 +142,7 @@ namespace ValidadorDuplicidade
                         Lista3.Add(registro);
                     }
 
-                    string nome = worksheet.Name;
-                    string nome2 = worksheet2.Name;
-                    string nome3 = worksheet3.Name;
+
 
 
 

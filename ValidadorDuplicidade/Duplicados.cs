@@ -8,6 +8,7 @@ namespace ValidadorDuplicidade
     public partial class Duplicados : Form
 
     {
+        Ordenar ord = new Ordenar();
         private List<Registro> DuplicadosLista;
         private List<Registro> List1;
         private List<Registro> List2;
@@ -16,7 +17,6 @@ namespace ValidadorDuplicidade
         public int contador1;
         public int contador2;
 
-        Filtros f = new Filtros();
         Excel excel = new Excel();
 
         private int CelulaNome = 0;
@@ -188,7 +188,7 @@ namespace ValidadorDuplicidade
                 ResultadoLista1.Rows.Clear();
                 ResultadoLista2.Rows.Clear();
 
-                var retorno = excel.abrirDocumento(Properties.Settings.Default.Caminho_arq, f);
+                var retorno = excel.abrirDocumento(Properties.Settings.Default.Caminho_arq, ord);
 
 
                 foreach (var dado in retorno.Duplicados["DuplicadosTodos"])

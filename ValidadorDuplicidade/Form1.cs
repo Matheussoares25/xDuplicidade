@@ -24,8 +24,7 @@ namespace ValidadorDuplicidade
     public partial class Form1 : Form
     {
 
-        Filtros f = new Filtros();
-
+        Ordenar ord = new Ordenar();
         List<string> r = new List<string>();
 
         int numeroDuplicados = 0;
@@ -117,7 +116,7 @@ namespace ValidadorDuplicidade
 
                 Excel excel = new Excel();
 
-                var retorno = excel.abrirDocumento(Properties.Settings.Default.Caminho_arq, f);
+                var retorno = excel.abrirDocumento(Properties.Settings.Default.Caminho_arq, ord);
 
                 MessageBox.Show($"Foi encontrado no arquivo {retorno.TotalPlanilhas} planilhas.  Planilhas usadas no comparativo: {string.Join(", ", retorno.planilhasUsadas)}", "Informação");
 
